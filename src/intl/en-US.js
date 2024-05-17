@@ -3,6 +3,7 @@ export default {
   appName: 'Orbitfore',
   appDescription: 'A fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.',
   homeDescription: `
+    <title>Orbitfore</title>
     <p>
       Enafore is a fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.
     </p>
