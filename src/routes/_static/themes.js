@@ -5,6 +5,12 @@ const themes = [
     dark: false,
     color: 'royalblue'
   },
+    {
+    name: 'rosepine',
+    label: 'intl.themeRosepine',
+    dark: false,
+    color: '#b4637a'
+  },
   {
     name: 'scarlet',
     label: 'intl.themeScarlet',
