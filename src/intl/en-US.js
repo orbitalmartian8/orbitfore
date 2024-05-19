@@ -1,9 +1,9 @@
 export default {
   // Home page, basic <title> and <description>
-  appName: 'Orbitfore',
+  appName: 'Orbitalfore',
   appDescription: 'A fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.',
   homeDescription: `
-    <title>Orbitfore</title>
+    <title>Orbitalfore</title>
     <p>
       Enafore is a fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.
     </p>
@@ -13,7 +13,7 @@ export default {
   logIn: 'Log in',
   footer: `
     <p>
-      Enafore is <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">open-source software</a> distributed under the
+      Orbitalfore is <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">open-source software</a> distributed under the
       <a rel="noopener" target="_blank"
          href="https://github.com/enafore/enafore/blob/main/LICENSE">AGPL License</a>.
       Here is the <a href="/settings/about#privacy-policy" rel="prefetch">privacy policy</a>.
@@ -193,16 +193,16 @@ export default {
   }`,
   pinPage: 'Pin {label}',
   // Status composition
-  composeStatus: 'Compose post',
-  postStatus: 'Post',
+  composeStatus: 'New Toot',
+  postStatus: 'Toot',
   contentWarning: 'Content warning',
   dropToUpload: 'Drop to upload',
   invalidFileType: 'Invalid file type',
-  composeLabel: "What's on your mind?",
+  composeLabel: "What's tooting?",
   autocompleteDescription: 'When autocomplete results are available, press up or down arrows and enter to select.',
   mediaUploads: 'Media uploads',
-  edit: 'Edit',
-  delete: 'Delete',
+  edit: 'Edit Toot',
+  delete: 'Delete Toot',
   description: 'Description',
   descriptionLabel: 'Describe for visually impaired (image, video) or auditorily impaired (audio, video) people',
   markAsSensitive: 'Mark media as sensitive',
@@ -583,6 +583,7 @@ export default {
   direct: 'Direct',
   // Themes
   themeRoyal: 'Light',
+  themeRosePine: 'Rose Pine Dawn',
   themeScarlet: 'Scarlet',
   themeSeafoam: 'Seafoam',
   themeHotpants: 'Hotpants',
