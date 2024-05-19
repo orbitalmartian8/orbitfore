@@ -583,7 +583,7 @@ export default {
   direct: 'Direct',
   // Themes
   themeRoyal: 'Light',
-  themeRosePine: 'Rose Pine Dawn',
+  themeRosepine: 'Rose Pine Dawn',
   themeScarlet: 'Scarlet',
   themeSeafoam: 'Seafoam',
   themeHotpants: 'Hotpants',
