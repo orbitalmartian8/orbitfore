@@ -124,6 +124,12 @@ const themes = [
     label: 'intl.themeDarkGrayscale',
     dark: true,
     color: '#666'
+  },
+  {
+    name: 'red',
+    label: 'intl.themeRed',
+    dark: true,
+    color: 'red'
   }
 ]
 
