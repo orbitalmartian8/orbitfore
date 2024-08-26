@@ -603,6 +603,7 @@ export default {
   themeMastodon: 'Mastodon',
   themePitchBlack: 'Pitch Black',
   themeDarkGrayscale: 'Dark Grayscale',
+  themeRed: 'Red',
   // Polls
   voteOnPoll: 'Vote on poll',
   pollChoices: 'Poll choices',
