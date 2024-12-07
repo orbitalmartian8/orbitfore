@@ -350,12 +350,8 @@ export default {
     Orbitalfore is a form/instance of Enafore - made by OrbitalMartian sporting a number of customisations.
   </p>
   <h2 id="customisations">Customisations</h2>
-  <p>
-    <ul>
-      <li>Changed "status" and "post" to "toot".</li>
-      <li>Catppuccin Machiatto theme</li>
-    </ul>
-  </p>
+  <p>• Changed "status" and "post" to "toot".</p>
+  <p>• Catppuccin Machiatto theme</p>
   <hr />
   <p>
     Enafore is <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">open-source</a> software.
@@ -502,7 +498,7 @@ export default {
   instances: 'Instances',
   addInstance: 'Add instance',
   homeTimelineFilterSettings: 'Home timeline filter settings',
-  showReblogs: 'Show boosts',
+  showReblogs: 'Show retoots',
   showReplies: 'Show replies',
   switchOrLogOut: 'Switch to or log out of this instance',
   switchTo: 'Switch to this instance',
@@ -519,7 +515,7 @@ export default {
   newFollowers: 'New followers',
   reblogs: 'Boosts',
   pollResults: 'Poll results',
-  subscriptions: 'Subscribed posts',
+  subscriptions: 'Subscribed toots',
   needToReauthenticate: 'You need to reauthenticate in order to enable push notification. Log out of {instance}?',
   failedToUpdatePush: 'Failed to update push notification settings: {error}',
   // Themes
@@ -560,27 +556,27 @@ export default {
     one {1 time}
     other {{count} times}
   }`,
-  pinnedStatus: 'Pinned post',
-  rebloggedYou: 'boosted your post',
-  favoritedYou: 'favorited your post',
+  pinnedStatus: 'Pinned tott',
+  rebloggedYou: 'retooted your toot',
+  favoritedYou: 'favorited your toot',
   reacted: 'reacted with an emoji',
   reactedWith: 'reacted with',
   followedYou: 'followed you',
-  edited: 'edited their post',
+  edited: 'edited their toot',
   requestedFollow: 'requested to follow you',
   reported: 'filed a report',
   signedUp: 'signed up',
   posted: 'posted',
   pollYouCreatedEnded: 'A poll you created has ended',
   pollYouVotedEnded: 'A poll you voted on has ended',
-  reblogged: 'boosted',
+  reblogged: 'retooted',
   favorited: 'favorited',
-  unreblogged: 'unboosted',
+  unreblogged: 'unretooted',
   unfavorited: 'unfavorited',
   showSensitiveMedia: 'Show sensitive media',
   hideSensitiveMedia: 'Hide sensitive media',
   clickToShowSensitive: 'Sensitive content. Click to show.',
-  longPost: 'Long post',
+  longPost: 'Long toot',
   // Accessible status labels
   accountRebloggedYou: '{account} boosted your post',
   accountFavoritedYou: '{account} favorited your post',
@@ -594,7 +590,7 @@ export default {
   public: 'Public',
   unlisted: 'Unlisted',
   followersOnly: 'Followers-only',
-  direct: 'Direct',
+  direct: 'Private',
   // Themes
   themeRoyal: 'Light',
   themeScarlet: 'Scarlet',
