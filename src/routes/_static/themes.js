@@ -118,7 +118,7 @@ const themes = [
     label: 'intl.themeCohostLight',
     dark: false,
     color: '#83254F'
-  }
+  },
   {
     name: 'Catppuccin Machiatto',
     label: 'Catppuccin Machiaro', // user-visible name
