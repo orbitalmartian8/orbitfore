@@ -1,6 +1,6 @@
 export default {
   // Home page, basic <title> and <description>
-  appName: 'Enafore',
+  appName: 'Orbitalfore',
   appDescription: 'A fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.',
   homeDescription: `
     <p>
@@ -196,8 +196,8 @@ export default {
   }`,
   pinPage: 'Pin {label}',
   // Status composition
-  composeStatus: 'Compose post',
-  postStatus: 'Post',
+  composeStatus: 'Compose toot',
+  postStatus: 'Toot',
   contentWarning: 'Content warning',
   dropToUpload: 'Drop to upload',
   invalidFileType: 'Invalid file type',
@@ -232,7 +232,7 @@ export default {
   addMedia: 'Add media (images, video, audio)',
   addPoll: 'Add poll',
   removePoll: 'Remove poll',
-  postPrivacyLabel: 'Change post privacy (currently {label})',
+  postPrivacyLabel: 'Change toot privacy (currently {label})',
   addContentWarning: 'Add content warning',
   removeContentWarning: 'Remove content warning',
   altLabel: 'Describe for visually impaired people',
@@ -311,7 +311,7 @@ export default {
   // Account profile
   profileForAccount: 'Profile for {account}',
   statisticsAndMoreOptions: 'Stats and more options',
-  statuses: 'Posts',
+  statuses: 'Toots',
   follows: 'Follows',
   followers: 'Followers',
   moreOptions: 'More options',
