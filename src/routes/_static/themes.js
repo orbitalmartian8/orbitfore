@@ -120,7 +120,7 @@ const themes = [
     color: '#83254F'
   },
   {
-    name: 'Catppuccin Machiatto',
+    name: 'catppuccin-machiato',
     label: 'Catppuccin Machiaro', // user-visible name
     color: '#8aadf4', // main theme color
     dark: true // whether it's a dark theme or not
