@@ -62,7 +62,7 @@ export default {
   local: 'Local',
   notifications: 'Notifications',
   mutedUsers: 'Muted users',
-  pinnedStatuses: 'Pinned posts',
+  pinnedStatuses: 'Pinned toots',
   followRequests: 'Follow requests',
   followRequestsLabel: `Follow requests {hasFollowRequests, select,
     true {({count})}
@@ -344,8 +344,19 @@ export default {
   verified: 'Verified',
   // About page
   about: 'About',
-  aboutApp: 'About Enafore',
+  aboutApp: 'About Orbitalfore',
   aboutAppDescription: `
+  <p>
+    Orbitalfore is a form/instance of Enafore - made by OrbitalMartian sporting a number of customisations.
+  </p>
+  <h2 id="customisations">Customisations</h2>
+  <p>
+    <ul>
+      <li>Changed "status" and "post" to "toot".</li>
+      <li>Catppuccin Machiatto theme</li>
+    </ul>
+  </p>
+  <hr />
   <p>
     Enafore is <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">open-source</a> software.
   </p>
