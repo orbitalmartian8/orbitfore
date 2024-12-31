@@ -13,7 +13,7 @@ export default {
   logIn: 'Log in',
   footer: `
     <p>
-      Enafore is <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">open-source software</a> distributed under the
+      OrbitalFore is <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">open-source software</a> distributed under the
       <a rel="noopener" target="_blank"
          href="https://github.com/enafore/enafore/blob/main/LICENSE">AGPL License</a>.
       Here is the <a href="/settings/about#privacy-policy" rel="prefetch">privacy policy</a>.
@@ -556,7 +556,7 @@ export default {
     one {1 time}
     other {{count} times}
   }`,
-  pinnedStatus: 'Pinned tott',
+  pinnedStatus: 'Pinned toot',
   rebloggedYou: 'retooted your toot',
   favoritedYou: 'favorited your toot',
   reacted: 'reacted with an emoji',
