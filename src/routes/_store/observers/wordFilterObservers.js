@@ -7,7 +7,7 @@ import { database } from '../../_database/database.js'
 import { mark, stop } from '../../_utils/marks.js'
 
 export function wordFilterObservers () {
-  if (!process.env.BROWSER) {
+  if (!ENAFORE_IS_BROWSER) {
     return
   }
   on('wordFiltersChanged', instanceName => {

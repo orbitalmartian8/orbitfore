@@ -1,10 +1,10 @@
 import { store } from '../store.js'
 
-const centerNavStyle = process.env.BROWSER && document.getElementById('theCenterNavStyle')
+const centerNavStyle = ENAFORE_IS_BROWSER && document.getElementById('theCenterNavStyle')
 
 export function centerNavObservers () {
   store.observe('centerNav', centerNav => {
-    if (!process.env.BROWSER) {
+    if (!ENAFORE_IS_BROWSER) {
       return
     }
 

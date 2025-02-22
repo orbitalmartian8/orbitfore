@@ -8,13 +8,13 @@ let notifyCount = 0
 
 // debounce to avoid notifying for a short connection issue
 const notifyOffline = debounce(() => {
-  if (process.env.BROWSER && !navigator.onLine && ++notifyCount <= NOTIFY_OFFLINE_LIMIT) {
+  if (ENAFORE_IS_BROWSER && !navigator.onLine && ++notifyCount <= NOTIFY_OFFLINE_LIMIT) {
     toast.say('intl.youAreOffline')
   }
 }, OFFLINE_DELAY)
 
 export function onlineObservers (store) {
-  if (!process.env.BROWSER) {
+  if (!ENAFORE_IS_BROWSER) {
     return
   }
 

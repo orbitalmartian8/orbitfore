@@ -13,4 +13,4 @@ function getChromeVersion () {
   }
 }
 
-export const isChromePre82 = thunk(() => process.env.BROWSER && isChrome() && getChromeVersion() < 82)
+export const isChromePre82 = thunk(() => ENAFORE_IS_BROWSER && isChrome() && getChromeVersion() < 82)

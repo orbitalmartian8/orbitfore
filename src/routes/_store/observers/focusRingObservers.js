@@ -1,7 +1,7 @@
 import { supportsFocusVisible } from '../../_utils/supportsFocusVisible.js'
 
 export function focusRingObservers (store) {
-  if (!process.env.BROWSER) {
+  if (!ENAFORE_IS_BROWSER) {
     return
   }
 

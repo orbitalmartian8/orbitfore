@@ -106,7 +106,7 @@ export function closeDatabase(instanceName: string) {
   clearAllCaches(instanceName)
 }
 
-if (process.env.BROWSER) {
+if (ENAFORE_IS_BROWSER) {
   lifecycle.addEventListener('statechange', (event) => {
     if (event.newState === 'frozen') {
       // page is frozen, close IDB connections

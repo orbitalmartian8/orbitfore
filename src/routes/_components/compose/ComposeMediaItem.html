@@ -132,7 +132,7 @@
   import { throttleTimer } from '../../_utils/throttleTimer.js'
 
   const updateMediaInStore = throttleTimer(scheduleIdleTask)
-  const resizeTextarea = process.env.BROWSER && throttleTimer(requestAnimationFrame)
+  const resizeTextarea = ENAFORE_IS_BROWSER && throttleTimer(requestAnimationFrame)
 
   export default {
     oncreate () {

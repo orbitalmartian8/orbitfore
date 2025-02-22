@@ -1,7 +1,7 @@
 import { store } from '../store.js'
 
 export function notificationPermissionObservers () {
-  if (!process.env.BROWSER || !navigator.permissions || !navigator.permissions.query) {
+  if (!ENAFORE_IS_BROWSER || !navigator.permissions || !navigator.permissions.query) {
     return
   }
 

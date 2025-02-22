@@ -1,4 +1,4 @@
-const ariaLiveElement = process.env.BROWSER && document.getElementById('theAriaLive')
+const ariaLiveElement = ENAFORE_IS_BROWSER && document.getElementById('theAriaLive')
 
 export function announceAriaLivePolite (text) {
   ariaLiveElement.textContent = text

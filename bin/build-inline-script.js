@@ -21,7 +21,7 @@ async function buildInlineScriptAndCSP () {
     plugins: [
       replace({
         values: {
-          'process.env.BROWSER': 'true',
+          ENAFORE_IS_BROWSER: 'true',
           'process.env.THEME_COLORS': JSON.stringify(inlineThemeColors)
         },
         preventAssignment: false

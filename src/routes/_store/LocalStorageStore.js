@@ -8,7 +8,7 @@ const { Store } = /** @type {import('svelte/store.d.ts')} */(storePackage)
 export class LocalStorageStore extends Store {
   constructor (state, keysToWatch) {
     super(state)
-    if (!process.env.BROWSER) {
+    if (!ENAFORE_IS_BROWSER) {
       return
     }
     this._keysToWatch = keysToWatch
@@ -29,7 +29,7 @@ export class LocalStorageStore extends Store {
         }
       })
     })
-    if (process.env.BROWSER) {
+    if (ENAFORE_IS_BROWSER) {
       lifecycle.addEventListener('statechange', e => {
         if (e.newState === 'passive') {
           console.log('saving LocalStorageStore...')
@@ -40,7 +40,7 @@ export class LocalStorageStore extends Store {
   }
 
   save () {
-    if (!process.env.BROWSER) {
+    if (!ENAFORE_IS_BROWSER) {
       return
     }
     Object.keys(this._keysToSave).forEach(key => {

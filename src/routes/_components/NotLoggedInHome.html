@@ -71,7 +71,7 @@
     },
     data: () => {
       return {
-        appName: process.env.UPSTREAM ? 'Enafore' : process.env.BROWSER ? location.hostname : '',
+        appName: process.env.UPSTREAM ? 'Enafore' : ENAFORE_IS_BROWSER ? location.hostname : '',
         singleInstance: process.env.SINGLE_INSTANCE
       }
     },

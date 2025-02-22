@@ -7,7 +7,7 @@ type Events = {
 }
 const eventBus = mitt<Events>()
 
-if (process.env.BROWSER) {
+if (ENAFORE_IS_BROWSER) {
   ;(window as any).__eventBus = eventBus
 }
 

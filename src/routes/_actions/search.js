@@ -21,7 +21,7 @@ export async function doSearch () {
     }
   } catch (e) {
     /* no await */ toast.say(
-      formatIntl('intl.searchError', { error: e.message || '' })
+      formatIntl('intl.searchError', { error: e.message || String(e) })
     )
     console.error(e)
   } finally {

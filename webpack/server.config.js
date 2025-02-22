@@ -79,8 +79,8 @@ export default {
       'process.env.INLINE_SVGS': JSON.stringify(inlineSvgs),
       'process.env.LOCALE': JSON.stringify(LOCALE),
       'process.env.PINAFORE_VERSION': JSON.stringify(version),
-      'process.env.IS_SERVICE_WORKER': 'false',
-      'process.env.BROWSER': 'false',
+      ENAFORE_IS_SERVICE_WORKER: 'false',
+      ENAFORE_IS_BROWSER: 'false',
       'process.env.THEME_COLORS': 'null',
       'process.env.UPSTREAM': isUpstream,
       'process.env.SINGLE_INSTANCE': JSON.stringify(process.env.SINGLE_INSTANCE)

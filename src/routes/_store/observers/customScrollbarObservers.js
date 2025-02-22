@@ -1,10 +1,10 @@
 import { store } from '../store.js'
 
-const theScrollbarStyle = process.env.BROWSER && document.getElementById('theScrollbarStyle')
+const theScrollbarStyle = ENAFORE_IS_BROWSER && document.getElementById('theScrollbarStyle')
 
 export function customScrollbarObservers () {
   store.observe('disableCustomScrollbars', disableCustomScrollbars => {
-    if (!process.env.BROWSER) {
+    if (!ENAFORE_IS_BROWSER) {
       return
     }
 

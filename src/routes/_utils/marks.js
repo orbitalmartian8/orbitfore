@@ -1,9 +1,9 @@
-const enabled = process.env.BROWSER && performance.mark && (
+const enabled = ENAFORE_IS_BROWSER && performance.mark && (
   process.env.NODE_ENV !== 'production' ||
   (typeof location !== 'undefined' && location.search.includes('marks=true'))
 )
 
-const perf = process.env.BROWSER && performance
+const perf = ENAFORE_IS_BROWSER && performance
 
 export function mark (name) {
   if (enabled) {

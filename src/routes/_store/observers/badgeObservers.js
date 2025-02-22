@@ -2,7 +2,7 @@ import { store } from '../store.js'
 import { isChromePre87 } from '../../_utils/userAgent/isChromePre87.js'
 
 export function badgeObservers () {
-  if (!process.env.BROWSER) {
+  if (!ENAFORE_IS_BROWSER) {
     return
   }
   // Chrome 86 on Linux in Circle CI seems to hang just by checking for this... not worth supporting.

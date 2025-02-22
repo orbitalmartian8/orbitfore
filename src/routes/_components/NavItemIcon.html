@@ -70,7 +70,7 @@
     }),
     computed: {
       badgeDigits: ({ badgeNumber }) => Math.min(3, badgeNumber.toString().length),
-      badgeNumberToShow: ({ badgeNumber }) => (badgeNumber < 100 ? badgeNumber.toString() : '99+')
+      badgeNumberToShow: ({ badgeNumber }) => typeof badgeNumber === 'number' ? (badgeNumber < 100 ? badgeNumber.toString() : '99+') : badgeNumber
     },
     components: {
       SvgIcon

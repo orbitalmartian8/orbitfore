@@ -1,5 +1,5 @@
 export function touchObservers (store) {
-  if (!process.env.BROWSER) {
+  if (!ENAFORE_IS_BROWSER) {
     return
   }
 

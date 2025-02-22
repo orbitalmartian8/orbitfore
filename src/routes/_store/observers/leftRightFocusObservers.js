@@ -6,7 +6,7 @@ import { importArrowKeyNavigation } from '../../_utils/asyncModules/importArrowK
 let arrowKeyNav
 
 export function leftRightFocusObservers (store) {
-  if (!process.env.BROWSER) {
+  if (!ENAFORE_IS_BROWSER) {
     return
   }
 

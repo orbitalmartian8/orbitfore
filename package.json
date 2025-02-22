@@ -126,7 +126,9 @@
       "sessionStorage",
       "Worker",
       "Audio",
-      "HTMLElement"
+      "HTMLElement",
+      "ENAFORE_IS_BROWSER",
+      "ENAFORE_VERSION"
     ]
   },
   "prettier": {

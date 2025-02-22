@@ -5,7 +5,7 @@
 
 import { isEqual } from '../_utils/lodash-lite.js'
 
-if (process.env.BROWSER && process.env.NODE_ENV !== 'production') {
+if (ENAFORE_IS_BROWSER && process.env.NODE_ENV !== 'production') {
   window.reselectStats = {}
 }
 
@@ -16,7 +16,7 @@ export function reselect (store, outputKey, inputKey) {
   const countKey = `${outputKey}_reselectCount`
 
   store.compute(countKey, [inputKey], input => {
-    if (process.env.BROWSER && process.env.NODE_ENV !== 'production') {
+    if (ENAFORE_IS_BROWSER && process.env.NODE_ENV !== 'production') {
       window.reselectStats[inputKey] = window.reselectStats[inputKey] || { numInputChanges: 0, numOutputChanges: 0 }
       window.reselectStats[inputKey].numInputChanges++
     }
@@ -28,7 +28,7 @@ export function reselect (store, outputKey, inputKey) {
   })
 
   store.compute(outputKey, [countKey], () => {
-    if (process.env.BROWSER && process.env.NODE_ENV !== 'production') {
+    if (ENAFORE_IS_BROWSER && process.env.NODE_ENV !== 'production') {
       window.reselectStats[inputKey].numOutputChanges++
     }
     prevValue = nextValue

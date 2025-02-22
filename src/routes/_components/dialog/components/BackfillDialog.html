@@ -1,0 +1,147 @@
+<ModalDialog
+  {id}
+  {label}
+  {title}
+  shrinkWidthToFit="{true}"
+  background="var(--main-bg)"
+>
+  <div class="backfill-dialog-wrap">
+    <p>
+      This is an experimental tool to force your instance to fetch a remote
+      user's full post history. Use at your own risk.
+    </p>
+    <p>
+      {#if done} Finished fetching {postsFetched} posts dating back to
+      {shortInlineFormattedDate}. You're all set! {:else} Posts fetched:
+      {postsFetched}<br />
+      Oldest post fetched: {shortInlineFormattedDate} {/if}
+    </p>
+    <button type="button" on:click="onClick()">{buttonText}</button>
+  </div>
+</ModalDialog>
+<style>
+  .backfill-dialog-wrap {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>
+<script>
+  import ModalDialog from './ModalDialog.html'
+  import { show } from '../helpers/showDialog.js'
+  import { close } from '../helpers/closeDialog.js'
+  import { toast } from '../../toast/toast.js'
+  import { get, paramsString } from '../../../_utils/ajax.js'
+  import { formatIntl } from '../../../_utils/formatIntl.js'
+  import { on } from '../../../_utils/eventBus.ts'
+  import { store } from '../../../_store/store.js'
+  import { dayOnlyAbsoluteDateFormatter } from '../../../_utils/formatters.js'
+  import { formatTimeagoDate } from '../../../_intl/formatTimeagoDate.js'
+  import { search } from '../../../_api/search.js'
+
+  export default {
+    oncreate () {
+      on('destroyDialog', this, this.destroyDialog)
+    },
+    methods: {
+      show,
+      close,
+      async onClick () {
+        let { controller, running, done, account } = this.get()
+        const { currentInstance, accessToken } = this.store.get()
+        if (running) {
+          if (controller) controller.abort()
+          running = false
+          done = false
+          this.set({ controller: null, running, done })
+        } else if (done) {
+          if (controller) controller.abort()
+          this.set({ controller: null })
+          this.close()
+        } else {
+          running = true
+          done = false
+          controller = new AbortController()
+          this.set({ controller, running, done })
+          try {
+            let url = account.uri || account.url
+            let count = 0
+            let lastPublished = null
+            const fetched = new Set()
+            while (url) {
+              if (controller.signal.aborted) return
+              const res = await get(
+                `https://backfill.enafore.social/backfill?${paramsString({ url })}`,
+                null,
+                { signal: controller.signal }
+              )
+              await Promise.all(
+                res.entries.map(async ({ published, id }) => {
+                  if (fetched.has(id)) return
+                  fetched.add(id)
+                  await search(
+                    currentInstance,
+                    accessToken,
+                    id,
+                    true,
+                    1,
+                    false,
+                    controller.signal
+                  )
+                  console.log(id)
+                  count++
+                  if (published) {
+                    const p = Date.parse(published)
+                    if (p < (lastPublished || Infinity)) lastPublished = p
+                  }
+                  this.set({ postsFetched: count, lastPublished })
+                })
+              )
+              url = res.next
+            }
+            this.set({ controller: null, running: false, done: true })
+          } catch (e) {
+            console.error(e)
+            this.set({ running: false, done: false })
+            if (!(e instanceof Error && e.name === 'AbortError')) {
+              /* no await */ toast.say(
+                formatIntl('intl.error', { error: e.message || String(e) })
+              )
+            }
+          }
+        }
+      },
+      destroyDialog (otherId) {
+        const { controller, id } = this.get()
+        if (id !== otherId) {
+          return
+        }
+        if (controller) controller.abort()
+      }
+    },
+    data: () => ({
+      running: false,
+      done: false,
+      lastPublished: null,
+      postsFetched: 0
+    }),
+    computed: {
+      buttonText: ({ running, done }) =>
+        running ? 'intl.cancel' : done ? 'intl.close' : 'intl.start',
+      shortInlineFormattedDate: ({
+        lastPublished,
+        $now,
+        $disableRelativeTimestamps
+      }) =>
+        lastPublished &&
+        ($disableRelativeTimestamps
+          ? dayOnlyAbsoluteDateFormatter().format(lastPublished)
+          : formatTimeagoDate(lastPublished, $now))
+    },
+    components: {
+      ModalDialog
+    },
+    store: () => store
+}
+</script>

@@ -138,9 +138,9 @@ export default {
       'process.env.EMOJI_PICKER_I18N': emojiPickerI18n
         ? JSON.stringify(emojiPickerI18n)
         : 'undefined',
-      'process.env.PINAFORE_VERSION': JSON.stringify(version),
-      'process.env.IS_SERVICE_WORKER': 'false',
-      'process.env.BROWSER': 'true',
+      ENAFORE_VERSION: JSON.stringify(version),
+      ENAFORE_IS_SERVICE_WORKER: 'false',
+      ENAFORE_IS_BROWSER: 'true',
       'process.env.THEME_COLORS': 'null',
       'process.env.UPSTREAM': isUpstream,
       'process.env.SINGLE_INSTANCE': JSON.stringify(process.env.SINGLE_INSTANCE)

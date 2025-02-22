@@ -11,7 +11,7 @@ import { emit } from '../_utils/eventBus.ts'
 let worker
 export function init () {
   worker = worker || new PromiseWorker(new Worker(new URL('../_workers/processContent/index.ts', import.meta.url)))
-  if (process.env.BROWSER) {
+  if (ENAFORE_IS_BROWSER) {
     try {
       initBlurhash()
     } catch (err) {

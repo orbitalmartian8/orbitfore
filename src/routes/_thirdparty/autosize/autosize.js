@@ -8,7 +8,7 @@ import { debounce } from '../../_thirdparty/lodash/timers.js'
 import { getScrollContainer } from '../../_utils/scrollContainer.js'
 import { throttleTimer } from '../../_utils/throttleTimer.js'
 
-const doUpdate = process.env.BROWSER && throttleTimer(requestAnimationFrame)
+const doUpdate = ENAFORE_IS_BROWSER && throttleTimer(requestAnimationFrame)
 
 const map = new Map()
 

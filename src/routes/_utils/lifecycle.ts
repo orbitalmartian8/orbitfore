@@ -12,7 +12,7 @@ function addEventListener(
   event: 'statechange',
   func: (_: StateChangeEvent) => any,
 ) {
-  if (process.env.BROWSER && !process.env.IS_SERVICE_WORKER) {
+  if (ENAFORE_IS_BROWSER && !ENAFORE_IS_SERVICE_WORKER) {
     importPageLifecycle().then((lifecycle) => {
       lifecycle.addEventListener(event, func)
     })
@@ -23,7 +23,7 @@ function removeEventListener(
   event: 'statechange',
   func: (_: StateChangeEvent) => any,
 ) {
-  if (process.env.BROWSER && !process.env.IS_SERVICE_WORKER) {
+  if (ENAFORE_IS_BROWSER && !ENAFORE_IS_SERVICE_WORKER) {
     importPageLifecycle().then((lifecycle) => {
       lifecycle.removeEventListener(event, func)
     })

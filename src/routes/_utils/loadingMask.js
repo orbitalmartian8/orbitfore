@@ -2,7 +2,7 @@ import LoadingMask from '../_components/LoadingMask.html'
 
 let loadingMask
 
-if (process.env.BROWSER) {
+if (ENAFORE_IS_BROWSER) {
   loadingMask = new LoadingMask({
     target: document.querySelector('#loading-mask')
   })

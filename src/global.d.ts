@@ -1,8 +1,3 @@
-declare const process: {
-  env: {
-    BROWSER: boolean
-    IS_SERVICE_WORKER: boolean
-    PINAFORE_VERSION: string
-    NODE_ENV: string
-  }
-}
+declare const ENAFORE_IS_SERVICE_WORKER: boolean
+declare const ENAFORE_IS_BROWSER: boolean
+declare const ENAFORE_VERSION: string

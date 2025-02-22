@@ -3,7 +3,7 @@ import * as emojiDatabase from '../../_utils/emojiDatabase.js'
 import { convertCustomEmojiToEmojiPickerFormat } from '../../_utils/convertCustomEmojiToEmojiPickerFormat.js'
 
 export function customEmojiObservers () {
-  if (!process.env.BROWSER) {
+  if (!ENAFORE_IS_BROWSER) {
     return
   }
 

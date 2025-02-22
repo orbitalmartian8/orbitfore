@@ -30,6 +30,8 @@ export default {
   error: 'Error: {error}',
   errorShort: 'Error:',
   account: 'Account',
+  start: 'Start',
+  stop: 'Stop',
   // Relative timestamps
   justNow: 'just now',
   // Navigation, page titles
@@ -249,6 +251,7 @@ export default {
   unmuteAccount: 'Unmute {account}',
   showReblogsFromAccount: 'Show boosts from {account}',
   hideReblogsFromAccount: 'Hide boosts from {account}',
+  backfill: 'Load missing posts',
   showDomain: 'Unblock {domain}',
   hideDomain: 'Block {domain}',
   reportAccount: 'Report {account}',

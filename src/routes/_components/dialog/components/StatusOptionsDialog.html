@@ -33,7 +33,7 @@ import { quote } from '../../../_actions/quote.js'
 
 export default {
   data: () => ({
-    supportsWebShare: process.env.BROWSER && typeof navigator.share === 'function'
+    supportsWebShare: ENAFORE_IS_BROWSER && typeof navigator.share === 'function'
   }),
   computed: {
     relationship: ({ $currentAccountRelationship }) => $currentAccountRelationship,

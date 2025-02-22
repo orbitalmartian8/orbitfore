@@ -29,7 +29,7 @@ export function timelineObservers () {
   }
 
   store.observe('currentTimeline', async (currentTimeline) => {
-    if (!process.env.BROWSER) {
+    if (!ENAFORE_IS_BROWSER) {
       return
     }
 

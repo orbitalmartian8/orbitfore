@@ -29,21 +29,21 @@
       InformationalFooter: './_components/InformationalFooter.html'
     },
     oncreate () {
-      if (process.env.BROWSER && process.env.NODE_ENV !== 'production') {
+      if (ENAFORE_IS_BROWSER && process.env.NODE_ENV !== 'production') {
         window.layoutObject = this
       }
 
       this.observe('page', page => {
         console.log('currentPage', page)
         this.store.set({ currentPage: page })
-        if (process.env.BROWSER && location.hostname === 'enafore.social') scheduleIdleTask(checkStats)
+        if (ENAFORE_IS_BROWSER && location.hostname === 'enafore.social') scheduleIdleTask(checkStats)
       })
     },
     store: () => store,
     computed: {
       page: ({ child }) => child.props.path.slice(1) || 'home',
       infiniteScrollPage: ({ $isUserLoggedIn, page }) => $isUserLoggedIn && !page.startsWith('settings'),
-      canonical: ({ path }) => (process.env.BROWSER ? location.origin + path : process.env.UPSTREAM ? 'https://enafore.social' + path : null)
+      canonical: ({ path }) => (ENAFORE_IS_BROWSER ? location.origin + path : process.env.UPSTREAM ? 'https://enafore.social' + path : null)
     },
     methods: {
       observe

@@ -5,7 +5,7 @@
   export default {
     computed: {
       style ({ $isUserLoggedIn }) {
-        return process.env.BROWSER && !$isUserLoggedIn ? '' : 'opacity: 0'
+        return ENAFORE_IS_BROWSER && !$isUserLoggedIn ? '' : 'opacity: 0'
       }
     }
   }

@@ -29,7 +29,7 @@
   import { throttleTimer } from '../_utils/throttleTimer.js'
   import { classname } from '../_utils/classname.js'
 
-  const updateDisplayedLength = process.env.BROWSER && throttleTimer(requestAnimationFrame)
+  const updateDisplayedLength = ENAFORE_IS_BROWSER && throttleTimer(requestAnimationFrame)
 
   export default {
     oncreate () {

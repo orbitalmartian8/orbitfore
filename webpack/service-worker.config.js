@@ -46,8 +46,8 @@ export default {
       'process.env.NODE_ENV': JSON.stringify(mode),
       'process.env.SAPPER_TIMESTAMP': process.env.SAPPER_TIMESTAMP || Date.now(),
       'process.env.LOCALE': JSON.stringify(LOCALE),
-      'process.env.IS_SERVICE_WORKER': 'true',
-      'process.env.BROWSER': 'true',
+      ENAFORE_IS_SERVICE_WORKER: 'true',
+      ENAFORE_IS_BROWSER: 'true',
       'process.env.THEME_COLORS': JSON.stringify(inlineThemeColors),
       'process.env.UPSTREAM': isUpstream,
       'process.env.SINGLE_INSTANCE': JSON.stringify(process.env.SINGLE_INSTANCE)

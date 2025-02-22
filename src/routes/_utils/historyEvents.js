@@ -12,7 +12,7 @@ function wrapper (type) {
   }
 }
 
-if (process.env.BROWSER) {
+if (ENAFORE_IS_BROWSER) {
   history.pushState = wrapper('pushState')
   history.replaceState = wrapper('replaceState')
 }

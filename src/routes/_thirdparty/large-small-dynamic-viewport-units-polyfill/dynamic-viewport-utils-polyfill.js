@@ -3,14 +3,14 @@
 import { throttleTimer } from '../../_utils/throttleTimer.js'
 
 // Don't execute this resize listener more than the browser can paint
-const rafAlignedResize = process.env.BROWSER && throttleTimer(requestAnimationFrame)
+const rafAlignedResize = ENAFORE_IS_BROWSER && throttleTimer(requestAnimationFrame)
 
 function setVh () {
   const dvh = window.innerHeight * 0.01
   document.documentElement.style.setProperty('--1dvh', (dvh + 'px'))
 }
 
-if (process.env.BROWSER) {
+if (ENAFORE_IS_BROWSER) {
   // We run the calculation as soon as possible (eg. the script is in document head)
   setVh()
 

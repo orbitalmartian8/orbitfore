@@ -6,7 +6,7 @@ let currentFaviconHasNotifications = false
 
 export function notificationObservers () {
   store.observe('hasNotifications', hasNotifications => {
-    if (!process.env.BROWSER) {
+    if (!ENAFORE_IS_BROWSER) {
       return
     }
     runMediumPriorityTask(() => {

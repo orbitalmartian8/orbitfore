@@ -6,7 +6,7 @@ export type Log = {
   stack?: string
 }
 export const logs: Log[] = []
-if (process.env.BROWSER) {
+if (ENAFORE_IS_BROWSER) {
   function add(log: Log) {
     if (logs.length > 100) {
       logs.shift()
@@ -50,6 +50,6 @@ if (process.env.BROWSER) {
     },
   })
   console.info(String.raw`  /|\    Starting Enafore
-_/_|_)_  Version ${process.env.PINAFORE_VERSION}
+_/_|_)_  Version ${ENAFORE_VERSION}
 \_____/  Built for ${process.env.NODE_ENV}`)
 }

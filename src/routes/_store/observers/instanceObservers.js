@@ -76,7 +76,7 @@ function stream (store, instanceName, currentInstanceInfo) {
 
 export function instanceObservers () {
   store.observe('currentInstance', async (currentInstance) => {
-    if (!process.env.BROWSER) {
+    if (!ENAFORE_IS_BROWSER) {
       return
     }
     if (currentInstanceStream) {

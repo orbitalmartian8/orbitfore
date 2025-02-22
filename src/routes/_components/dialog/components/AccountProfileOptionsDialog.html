@@ -13,6 +13,7 @@ import { store } from '../../../_store/store.js'
 import GenericDialogList from './GenericDialogList.html'
 import { show } from '../helpers/showDialog.js'
 import { close } from '../helpers/closeDialog.js'
+import { backfill } from '../../../_actions/backfill.js'
 import { setAccountBlocked } from '../../../_actions/block.js'
 import { setAccountFollowed } from '../../../_actions/follow.js'
 import { setShowReblogs } from '../../../_actions/setShowReblogs.js'
@@ -109,6 +110,11 @@ export default {
         icon: '#fa-bell-o'
       },
       !isUser && {
+        key: 'backfill',
+        label: 'intl.backfill',
+        icon: '#fa-clock'
+      },
+      !isUser && {
         key: 'block',
         label: blockLabel,
         icon: blockIcon
@@ -149,6 +155,8 @@ export default {
           return this.onMentionClicked()
         case 'follow':
           return this.onFollowClicked()
+        case 'backfill':
+          return this.onBackfillClicked()
         case 'block':
           return this.onBlockClicked()
         case 'mute':
@@ -176,6 +184,11 @@ export default {
       const { accountId, following } = this.get()
       this.close()
       await setAccountFollowed(accountId, !following, true)
+    },
+    async onBackfillClicked () {
+      const { account } = this.get()
+      this.close()
+      await backfill(account)
     },
     async onBlockClicked () {
       const { accountId, blocking } = this.get()

@@ -18,7 +18,7 @@
   import { store } from '../_store/store.js'
   import { observe } from 'svelte-extras'
   import { throttleTimer } from '../_utils/throttleTimer.js'
-  const updateDisplayedLength = process.env.BROWSER && throttleTimer(requestAnimationFrame)
+  const updateDisplayedLength = ENAFORE_IS_BROWSER && throttleTimer(requestAnimationFrame)
 
   // How many chars within the limit to start warning at
   const WARN_THRESHOLD = 10

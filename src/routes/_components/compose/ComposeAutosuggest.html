@@ -17,7 +17,7 @@
   import { get } from '../../_utils/lodash-lite.js'
   import { registerResizeListener, unregisterResizeListener } from '../../_utils/resize.js'
 
-  const updatePosition = process.env.BROWSER && throttleTimer(requestAnimationFrame)
+  const updatePosition = ENAFORE_IS_BROWSER && throttleTimer(requestAnimationFrame)
 
   export default {
     oncreate () {
