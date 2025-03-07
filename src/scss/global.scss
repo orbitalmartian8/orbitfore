@@ -12,7 +12,7 @@
 :root[dir="rtl"] {
   --ltr: 0;
   --rtl: 1;
-  
+
   & .rtl-flip {
     transform: scaleX(-1);
   }

@@ -1,29 +1,31 @@
-:root {
-  $deemphasized-color: lighten($main-bg-color, 54%);
+@use "sass:color";
 
-  --button-bg: #{lighten($main-bg-color, 6%)};
+:root {
+  $deemphasized-color: color.adjust($main-bg-color, $lightness: 54%);
+
+  --button-bg: #{color.adjust($main-bg-color, $lightness: 6%)};
   --button-text: #{$main-text-color};
-  --button-border: #{lighten($border-color, 6%)};
-  --button-bg-active: #{lighten($main-bg-color, 0%)};
-  --button-bg-hover: #{lighten($main-bg-color, 3%)};
+  --button-border: #{color.adjust($border-color, $lightness: 6%)};
+  --button-bg-active: #{color.adjust($main-bg-color, $lightness: 0%)};
+  --button-bg-hover: #{color.adjust($main-bg-color, $lightness: 3%)};
 
   --input-placeholder-color: #{$deemphasized-color};
 
   --action-button-deemphasized-fill-color: #{$deemphasized-color};
-  --action-button-deemphasized-fill-color-hover: #{lighten($deemphasized-color, 22%)};
-  --action-button-deemphasized-fill-color-active: #{lighten($deemphasized-color, 5%)};
-  --action-button-deemphasized-fill-color-pressed: #{darken($deemphasized-color, 7%)};
-  --action-button-deemphasized-fill-color-pressed-hover: #{darken($deemphasized-color, 2%)};
-  --action-button-deemphasized-fill-color-pressed-active: #{darken($deemphasized-color, 15%)};
+  --action-button-deemphasized-fill-color-hover: #{color.adjust($deemphasized-color, $lightness: 22%)};
+  --action-button-deemphasized-fill-color-active: #{color.adjust($deemphasized-color, $lightness: 5%)};
+  --action-button-deemphasized-fill-color-pressed: #{color.adjust($deemphasized-color, $lightness: -7%)};
+  --action-button-deemphasized-fill-color-pressed-hover: #{color.adjust($deemphasized-color, $lightness: -2%)};
+  --action-button-deemphasized-fill-color-pressed-active: #{color.adjust($deemphasized-color, $lightness: -15%)};
 
   --loading-bg: #{#222};
 
   --deemphasized-text-color: #{$deemphasized-color};
 
-  --very-deemphasized-text-color: #{lighten($main-bg-color, 44%)};
+  --very-deemphasized-text-color: #{color.adjust($main-bg-color, $lightness: 44%)};
   --very-deemphasized-link-color: var(--very-deemphasized-text-color);
 
-  --status-direct-background: #{darken($body-bg-color, 5%)};
+  --status-direct-background: #{color.adjust($body-bg-color, $lightness: -5%)};
   --main-theme-color: #{$main-theme-color};
   --warning-color: #{#c7423d};
   --alt-input-bg: #{rgba($main-bg-color, 0.9)};
@@ -34,31 +36,31 @@
 
   --compose-button-halo: #{rgba(0, 0, 0, 0.1)};
 
-  --compose-autosuggest-item-hover: #{lighten($main-bg-color, 10%)};
-  --compose-autosuggest-item-active: #{lighten($main-bg-color, 15%)};
-  --compose-autosuggest-outline: #{lighten($border-color, 20%)};
+  --compose-autosuggest-item-hover: #{color.adjust($main-bg-color, $lightness: 10%)};
+  --compose-autosuggest-item-active: #{color.adjust($main-bg-color, $lightness: 15%)};
+  --compose-autosuggest-outline: #{color.adjust($border-color, $lightness: 20%)};
 
   --file-drop-mask: #{rgba(30, 30, 30, 0.8)};
 
   --settings-list-item-text: #{$main-text-color};
   --settings-list-item-text-hover: #{$main-text-color};
-  --settings-list-item-bg-active: #{lighten($main-bg-color, 7%)};
-  --settings-list-item-bg-hover: #{lighten($main-bg-color, 3%)};
-  --logs-table-border: #{lighten($border-color, 10%)};
+  --settings-list-item-bg-active: #{color.adjust($main-bg-color, $lightness: 7%)};
+  --settings-list-item-bg-hover: #{color.adjust($main-bg-color, $lightness: 3%)};
+  --logs-table-border: #{color.adjust($border-color, $lightness: 10%)};
 
-  --banner-fill: #{lighten($main-theme-color, 10%)};
+  --banner-fill: #{color.adjust($main-theme-color, $lightness: 10%)};
 
   --tab-bg: #{$main-bg-color};
-  --tab-bg-non-selected: #{darken($main-bg-color, 2%)};
-  --tab-bg-active: #{lighten($main-bg-color, 15%)};
-  --tab-bg-hover: #{lighten($main-bg-color, 1%)};
-  --tab-bg-hover-non-selected: #{darken($main-bg-color, 1%)};
+  --tab-bg-non-selected: #{color.adjust($main-bg-color, $lightness: -2%)};
+  --tab-bg-active: #{color.adjust($main-bg-color, $lightness: 15%)};
+  --tab-bg-hover: #{color.adjust($main-bg-color, $lightness: 1%)};
+  --tab-bg-hover-non-selected: #{color.adjust($main-bg-color, $lightness: -1%)};
 
   --toast-anchor-color: #{$anchor-color};
 
   --length-indicator-color: var(--action-button-fill-color);
 
-  --blurhash-sensitive-text-color: #{lighten($deemphasized-color, 15%)};
+  --blurhash-sensitive-text-color: #{color.adjust($deemphasized-color, $lightness: 15%)};
 
   --focus-bg: #{rgba(255, 255, 255, 0.1)};
 

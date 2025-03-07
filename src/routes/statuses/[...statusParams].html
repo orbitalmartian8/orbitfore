@@ -28,7 +28,7 @@
             },
             title: 'intl.status'
           }
-        } if (statusParams.length === 2) {
+        } if (statusParams.length === 2 && !statusParams[1].includes('.')) {
           const page = statusParams[1]
           if (page === 'favorites') {
             return {

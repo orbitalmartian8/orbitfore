@@ -3,7 +3,14 @@ import path from 'path'
 import webpack from 'webpack'
 import config from 'sapper/config/webpack.js'
 import pkg from '../package.json'
-import { mode, dev, resolve, inlineSvgs, version, isUpstream } from './shared.config.js'
+import {
+  mode,
+  dev,
+  resolve,
+  inlineSvgs,
+  version,
+  isUpstream
+} from './shared.config.js'
 
 // modules that the server should ignore, either because they cause errors or warnings
 // (because they're only used on the client side)
@@ -22,7 +29,7 @@ const NOOP_MODULES = [
 
 const serverResolve = JSON.parse(JSON.stringify(resolve))
 serverResolve.alias = serverResolve.alias || {}
-NOOP_MODULES.forEach(mod => {
+NOOP_MODULES.forEach((mod) => {
   serverResolve.alias[mod] = 'lodash-es/noop.js'
 })
 
@@ -78,12 +85,15 @@ export default {
     new webpack.DefinePlugin({
       'process.env.INLINE_SVGS': JSON.stringify(inlineSvgs),
       'process.env.LOCALE': JSON.stringify(LOCALE),
-      'process.env.PINAFORE_VERSION': JSON.stringify(version),
+      ENAFORE_VERSION: JSON.stringify(version),
+      ENAFORE_ENV: JSON.stringify(mode),
       ENAFORE_IS_SERVICE_WORKER: 'false',
       ENAFORE_IS_BROWSER: 'false',
       'process.env.THEME_COLORS': 'null',
       'process.env.UPSTREAM': isUpstream,
-      'process.env.SINGLE_INSTANCE': JSON.stringify(process.env.SINGLE_INSTANCE)
+      'process.env.SINGLE_INSTANCE': JSON.stringify(
+        process.env.SINGLE_INSTANCE
+      )
     })
   ]
 }

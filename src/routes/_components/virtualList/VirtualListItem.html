@@ -71,14 +71,16 @@
     methods: {
       observe,
       doRecalculateHeight () {
+        const { data, shown } = this.get()
         // Recalculate immediately because this is done on-demand, e.g.
         // when clicking the "More" button on a spoiler.
-        if (!this.refs.node) return
+        if (!shown || !this.refs.node) return
         const rect = this.refs.node.getBoundingClientRect()
-        const { data } = this.get()
         const { itemHeights } = this.store.get()
-        itemHeights[data.id] = rect.height
-        this.store.setForRealm({ itemHeights })
+        if (itemHeights[data.id] !== rect.height) {
+          itemHeights[data.id] = rect.height
+          this.store.setForRealm({ itemHeights })
+        }
       }
     }
   }

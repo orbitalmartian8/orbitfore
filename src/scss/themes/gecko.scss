@@ -1,5 +1,7 @@
+@use "sass:color";
+
 $main-theme-color: #4ab92f;
-$body-bg-color: lighten($main-theme-color, 45%);
+$body-bg-color: color.adjust($main-theme-color, $lightness: 45%);
 $anchor-color: $main-theme-color;
 $main-text-color: #333;
 $border-color: #dadada;
@@ -7,12 +9,12 @@ $main-bg-color: white;
 $secondary-text-color: white;
 $toast-border: #fafafa;
 $toast-bg: #333;
-$focus-outline: lighten($main-theme-color, 30%);
-$compose-background: lighten($main-theme-color, 32%);
+$focus-outline: color.adjust($main-theme-color, $lightness: 30%);
+$compose-background: color.adjust($main-theme-color, $lightness: 32%);
 
-@import "_base.scss";
-@import "_light_scrollbars.scss";
+@import "./_base.scss";
+@import "./_light_scrollbars.scss";
 
 :root {
-  accent-color: #{darken($main-theme-color, 5%)};
+  accent-color: #{color.adjust($main-theme-color, $lightness: -5%)};
 }

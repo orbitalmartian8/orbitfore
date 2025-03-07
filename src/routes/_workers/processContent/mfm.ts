@@ -46,6 +46,7 @@ export function renderMfm({
   emojis,
   mentionsByURL,
   mentionsByAcct,
+  mentionsByLowerAcct,
 }: {
   mfmContent: string
   htmlContent: string
@@ -53,6 +54,7 @@ export function renderMfm({
   emojis: Map<string, { shortcode: string; url: string; static_url: string }>
   mentionsByURL: Map<string, Mention>
   mentionsByAcct: Map<string, Mention>
+  mentionsByLowerAcct: Map<string, Mention>
 }) {
   const mentionUrlsFromHtml: string[] = []
   function walkElements(node: DefaultTreeAdapterMap['parentNode']): void {
@@ -498,7 +500,8 @@ export function renderMfm({
             }
             const mention =
               (url && mentionsByURL.get(url)) ||
-              mentionsByAcct.get(token.props.username)
+              mentionsByAcct.get(acct) ||
+              mentionsByLowerAcct.get(acct.toLowerCase())
             if (!mention) {
               console.warn('failed to get mention for', '@' + acct)
               const ele = defaultTreeAdapter.createElement('a', HTML, [

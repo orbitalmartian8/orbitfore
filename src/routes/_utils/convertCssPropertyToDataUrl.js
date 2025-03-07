@@ -3,7 +3,7 @@ let canvas
 let context
 
 export function convertCssPropertyToDataUrl (prop) {
-  const color = getComputedStyle(document.documentElement).getPropertyValue(prop)
+  const color = document.documentElement.style.getPropertyValue(prop)
   let url = colorsToUrls.get(color)
   if (!url) {
     if (!canvas) {

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /*
   --color-notWhite: 255 249 242;
   --color-notBlack: 25 25 25;
@@ -47,32 +49,31 @@ $main-bg-color: white;
 $secondary-text-color: rgb(255 249 242);
 $toast-border: #fafafa;
 $toast-bg: rgb(255 216 168);
-$focus-outline: lighten($main-theme-color, 30%);
-$compose-background: lighten($main-theme-color, 32%);
+$focus-outline: color.adjust($main-theme-color, $lightness: 30%);
+$compose-background: color.adjust($main-theme-color, $lightness: 32%);
 $green: rgb(49 157 53);
 $scrollbar-face: rgb(229 107 111) !default;
 $scrollbar-track: rgb(255 216 168) !default;
 
-
-@import "_base.scss";
-@import "_light_scrollbars.scss";
+@import "./_base.scss";
+@import "./_light_scrollbars.scss";
 
 :root {
   --nav-indicator-bg-active: rgb(255 171 92);
   --blurhash-sensitive-text-color: #{$main-text-color};
   --mask-bg: #{$toast-bg};
   --mask-opaque-bg: #{rgba($main-theme-color, 0.8)};
-  --action-button-fill-color: #{lighten($main-text-color, 15%)};
-  --action-button-fill-color-hover: #{lighten($main-text-color, 28%)};
-  --action-button-fill-color-active: #{lighten($main-text-color, 23%)};
+  --action-button-fill-color: #{color.adjust($main-text-color, $lightness: 15%)};
+  --action-button-fill-color-hover: #{color.adjust($main-text-color, $lightness: 28%)};
+  --action-button-fill-color-active: #{color.adjust($main-text-color, $lightness: 23%)};
   --action-button-fill-color-pressed: #{$main-theme-color};
-  --action-button-fill-color-pressed-hover: #{lighten($main-theme-color, 20%)};
-  --action-button-fill-color-pressed-active: #{lighten($main-theme-color, 12%)};
-  --nav-a-selected-bg: #{mix($main-theme-color, rgb(229 107 111), 90%)};
-  --nav-a-selected-bg-hover: #{mix($main-theme-color, rgb(229 107 111), 85%)};
-  --nav-a-bg-hover: #{mix($main-theme-color, rgb(229 107 111), 92%)};
+  --action-button-fill-color-pressed-hover: #{color.adjust($main-theme-color, $lightness: 20%)};
+  --action-button-fill-color-pressed-active: #{color.adjust($main-theme-color, $lightness: 12%)};
+  --nav-a-selected-bg: #{color.mix($main-theme-color, rgb(229 107 111), 90%)};
+  --nav-a-selected-bg-hover: #{color.mix($main-theme-color, rgb(229 107 111), 85%)};
+  --nav-a-bg-hover: #{color.mix($main-theme-color, rgb(229 107 111), 92%)};
   --toast-text: var(--body-text);
-  --quote-border: #{lighten($border-color, 10%)};
+  --quote-border: #{color.adjust($border-color, $lightness: 10%)};
 }
 
 .nav-link-badge {
@@ -86,15 +87,15 @@ $scrollbar-track: rgb(255 216 168) !default;
 
 .icon-button[id^=reblog-] {
   --action-button-fill-color-pressed: #{$green};
-  --action-button-fill-color-pressed-hover: #{lighten($green, 20%)};
-  --action-button-fill-color-pressed-active: #{lighten($green, 12%)};
+  --action-button-fill-color-pressed-hover: #{color.adjust($green, $lightness: 20%)};
+  --action-button-fill-color-pressed-active: #{color.adjust($green, $lightness: 12%)};
 }
 
 .main-nav-link.selected, .main-nav-link:hover {
   --nav-svg-fill: rgb(255 171 92);
-  --nav-svg-fill-hover: #{lighten(rgb(255 171 92), 5%)};
-  --nav-text-color: #{lighten(rgb(255 171 92), 4%)};
-  --nav-text-color-hover: #{lighten(rgb(255 171 92), 9%)};
+  --nav-svg-fill-hover: #{color.adjust(rgb(255 171 92), $lightness: 5%)};
+  --nav-text-color: #{color.adjust(rgb(255 171 92), $lightness: 4%)};
+  --nav-text-color-hover: #{color.adjust(rgb(255 171 92), $lightness: 9%)};
 }
 
 .status-reaction:not(.pressed) {

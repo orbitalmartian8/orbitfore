@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $main-theme-color: #313543;
 $body-bg-color: #17191F;
 $main-bg-color: #282C37;
@@ -6,13 +8,13 @@ $main-text-color: #ffffff;
 $border-color: #393f4f;
 $secondary-text-color: #f6f6ff;
 $toast-border: $main-theme-color;
-$toast-bg: lighten($body-bg-color, 4%);
-$focus-outline: darken($main-theme-color, 10%);
-$compose-background: darken($main-theme-color, 12%);
+$toast-bg: color.adjust($body-bg-color, $lightness: 4%);
+$focus-outline: color.adjust($main-theme-color, $lightness: -10%);
+$compose-background: color.adjust($main-theme-color, $lightness: -12%);
 
-@import "_base.scss";
-@import "_dark.scss";
-@import "_dark_scrollbars.scss";
+@import "./_base.scss";
+@import "./_dark.scss";
+@import "./_dark_scrollbars.scss";
 
 :root {
   --settings-list-item-text: #9baec8;
@@ -24,10 +26,10 @@ $compose-background: darken($main-theme-color, 12%);
   --button-primary-border: transparent;
 
 
-  --action-button-fill-color: #{lighten($main-theme-color, 30%)};
-  --action-button-fill-color-hover: #{lighten($main-theme-color, 36%)};
-  --action-button-fill-color-active: #{lighten($main-theme-color, 42%)};
+  --action-button-fill-color: #{color.adjust($main-theme-color, $lightness: 30%)};
+  --action-button-fill-color-hover: #{color.adjust($main-theme-color, $lightness: 36%)};
+  --action-button-fill-color-active: #{color.adjust($main-theme-color, $lightness: 42%)};
   --action-button-fill-color-pressed: #2b90d9;
-  --action-button-fill-color-pressed-hover: #{darken(#2b90d9, 6%)};
-  --action-button-fill-color-pressed-active: #{darken(#2b90d9, 12%)};
+  --action-button-fill-color-pressed-hover: #{color.adjust(#2b90d9, $lightness: -6%)};
+  --action-button-fill-color-pressed-active: #{color.adjust(#2b90d9, $lightness: -12%)};
 }

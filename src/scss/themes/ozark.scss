@@ -1,21 +1,23 @@
+@use "sass:color";
+
 $main-theme-color: #5263af;
 $body-bg-color: #0f1427;
 $main-bg-color: #212433;
-$anchor-color: lighten($main-theme-color, 20%);
+$anchor-color: color.adjust($main-theme-color, $lightness: 20%);
 $main-text-color: #fafaff;
-$border-color: lighten($main-bg-color, 16%);
+$border-color: color.adjust($main-bg-color, $lightness: 16%);
 $secondary-text-color: #f6f6ff;
 $toast-border: $main-theme-color;
-$toast-bg: lighten($body-bg-color, 4%);
-$focus-outline: darken($main-theme-color, 10%);
-$compose-background: darken($main-theme-color, 12%);
+$toast-bg: color.adjust($body-bg-color, $lightness: 4%);
+$focus-outline: color.adjust($main-theme-color, $lightness: -10%);
+$compose-background: color.adjust($main-theme-color, $lightness: -12%);
 
-@import "_base.scss";
-@import "_dark.scss";
-@import "_dark_scrollbars.scss";
+@import "./_base.scss";
+@import "./_dark.scss";
+@import "./_dark_scrollbars.scss";
 
 :root {
-    --action-button-fill-color-pressed: #{lighten(saturate($main-theme-color, 25%), 8%)};
-    --action-button-fill-color-pressed-hover: #{lighten(saturate($main-theme-color, 25%), 12%)};
-    --action-button-fill-color-pressed-active: #{lighten(saturate($main-theme-color, 25%), 15%)};
+    --action-button-fill-color-pressed: #{color.adjust(color.adjust($main-theme-color, $saturation: 25%), $lightness: 8%)};
+    --action-button-fill-color-pressed-hover: #{color.adjust(color.adjust($main-theme-color, $saturation: 25%), $lightness: 12%)};
+    --action-button-fill-color-pressed-active: #{color.adjust(color.adjust($main-theme-color, $saturation: 25%), $lightness: 15%)};
 }

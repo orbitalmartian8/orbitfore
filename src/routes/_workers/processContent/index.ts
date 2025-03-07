@@ -38,11 +38,13 @@ registerPromiseWorker(
     }
     const mentionsByURL: Map<string, Mention> = new Map()
     const mentionsByAcct: Map<string, Mention> = new Map()
+    const mentionsByLowerAcct: Map<string, Mention> = new Map()
     if (originalStatus.mentions) {
       for (const mention of originalStatus.mentions as Mention[]) {
         mention.included = false
         mentionsByURL.set(mention.url, mention)
         mentionsByAcct.set(mention.acct, mention)
+        mentionsByLowerAcct.set(mention.acct.toLowerCase(), mention)
       }
     }
     if (mfmContent) {
@@ -53,6 +55,7 @@ registerPromiseWorker(
         emojis,
         mentionsByURL,
         mentionsByAcct,
+        mentionsByLowerAcct,
       })
     } else {
       dom = renderPostHTMLToDOM({

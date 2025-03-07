@@ -7,7 +7,12 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { type Component, render, createContext } from '@easrng/elements/tiny'
+import {
+  type Component,
+  render,
+  createContext,
+  DocNode,
+} from '@easrng/elements/tiny'
 import inspect from 'object-inspect'
 import { logs, type Log } from './hook.ts'
 import { eventBus } from '../eventBus.ts'
@@ -17,7 +22,7 @@ if (ENAFORE_IS_BROWSER) {
     const first = args[0]
     let a = 0
     let out: string[] = []
-    let styled: Node[] = []
+    let styled: DocNode[] = []
     let css: string = ''
     function flush() {
       if (out.length) {
@@ -148,7 +153,7 @@ if (ENAFORE_IS_BROWSER) {
         )
       : {}
     const indexKeys: unknown[] = []
-    const values: (Node | string)[] = []
+    const values: (DocNode | string)[] = []
 
     let hasPrimitives = false
     keys.forEach((k, idx) => {
@@ -315,7 +320,7 @@ if (ENAFORE_IS_BROWSER) {
           </span>
         `
       : ''
-    let content: Node
+    let content: DocNode
     if (log.type === 'clear') {
       content = html`<i class="message">Ignored console.clear()</i>`
     } else if (log.type === 'table') {

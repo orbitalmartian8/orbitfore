@@ -209,6 +209,8 @@
       pushShortcutScope(`modal-${id}`)
     },
     ondestroy () {
+      // avoid a11yDialog cloning emoji picker
+      this.refs.node.textContent = ''
       this._a11yDialog.destroy()
     },
     components: { Shortcut, SvgIcon },

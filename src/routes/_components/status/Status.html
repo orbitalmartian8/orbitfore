@@ -46,7 +46,7 @@
     <StatusPoll {...params} shown={showContent} on:recalculateHeight />
   {/if}
   {#if !nextGrouped && showQuote && showContent}
-    <svelte:self status={originalQuote} isQuote={true} parentElementId={elementId} {enableShortcuts} on:recalculateHeight />
+  <svelte:self status={originalQuote} quotedBy={uuid} {enableShortcuts} on:recalculateHeight />
   {/if}
   {#if !nextGrouped && showHashtagsInBar}
     <StatusTags {hashtagsInBar} {isStatusInNotification} />
@@ -57,7 +57,7 @@
   {#if !nextGrouped && isStatusInOwnThread}
     <StatusDetails {...params} {...timestampParams} />
   {/if}
-  {#if !nextGrouped && !isQuote}
+  {#if !nextGrouped && !quotedBy}
     <StatusToolbar {...params} {replyShown} on:recalculateHeight on:focusArticle="focusArticle()" />
   {/if}
   {#if !nextGrouped && replyShown}
@@ -270,13 +270,12 @@
       replyVisibility: undefined,
       preloadHiddenContent: false,
       enableShortcuts: null,
-      isQuote: false,
+      quotedBy: null,
       overrideOriginalStatus: null,
       timelineType: null,
       timelineValue: null,
       index: null,
       length: null,
-      parentElementId: null,
       prevSummary: undefined,
       summary: undefined,
       nextSummary: undefined,
@@ -359,10 +358,10 @@
         spoilerText || (plainTextContentOverLength && LONG_POST_TEXT)
       ),
       inReplyToId: ({ originalStatus }) => originalStatus.in_reply_to_id,
-      uuid: ({ $currentInstance, timelineType, timelineValue, notificationId, statusId }) => (
-        createStatusOrNotificationUuid($currentInstance, timelineType, timelineValue, notificationId, statusId)
+      uuid: ({ $currentInstance, timelineType, timelineValue, notificationId, statusId, quotedBy }) => (
+        createStatusOrNotificationUuid($currentInstance, timelineType, timelineValue, notificationId, statusId, quotedBy)
       ),
-      elementId: ({ uuid, parentElementId }) => (parentElementId ? parentElementId + '-' : '') + uuid,
+      elementId: ({ uuid }) => uuid,
       shortcutScope: ({ elementId }) => elementId,
       isStatusInOwnThread: ({ timelineType, timelineValue, originalStatusId }) => (
         (timelineType === 'status' || timelineType === 'reply') && timelineValue === originalStatusId
@@ -388,7 +387,7 @@
         originalStatus.media_attachments.length
       ),
       originalQuote: ({ originalStatus }) => originalStatus.quote,
-      showQuote: ({ isQuote, originalQuote }) => isQuote ? false : originalQuote,
+      showQuote: ({ quotedBy, originalQuote }) => quotedBy ? false : originalQuote,
       mediaAttachments: ({ originalStatus }) => (
         originalStatus.media_attachments
       ),
@@ -434,8 +433,8 @@
         status.reblog ||
         timelineType === 'pinned'
       ),
-      hasReactions: ({ isQuote, originalStatus }) => isQuote ? false : ((originalStatus.reactions || originalStatus.emoji_reactions) || []).length > 0,
-      className: ({ visibility, timelineType, isStatusInOwnThread, $underlineLinks, $disableTapOnStatus, isQuote, treeMetadata, nextGrouped, prevGrouped }) => (classname(
+      hasReactions: ({ quotedBy, originalStatus }) => quotedBy ? false : ((originalStatus.reactions || originalStatus.emoji_reactions) || []).length > 0,
+      className: ({ visibility, timelineType, isStatusInOwnThread, $underlineLinks, $disableTapOnStatus, quotedBy, treeMetadata, nextGrouped, prevGrouped }) => (classname(
         'status-article',
         'shortcut-list-item',
         'focus-fix',
@@ -446,7 +445,7 @@
         !$disableTapOnStatus && !isStatusInOwnThread && 'tap-on-status',
         (treeMetadata && treeMetadata.start) && 'status-subtree-start',
         (treeMetadata && treeMetadata.end) && 'status-subtree-end',
-        isQuote && 'status-quoted',
+        quotedBy && 'status-quoted',
         nextGrouped && 'notification-next-grouped',
         prevGrouped && 'notification-prev-grouped'
       )),
@@ -464,8 +463,8 @@
         absoluteFormattedCreatedDate,
         absoluteFormattedEditedDate
       }),
-      treeMetadata: ({ statusId, summary, isQuote }) => {
-        if (isQuote) return null
+      treeMetadata: ({ statusId, summary, quotedBy }) => {
+        if (quotedBy) return null
         if (!summary) return null
         return {
           depth: summary.depth,

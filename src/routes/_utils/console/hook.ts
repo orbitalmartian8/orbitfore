@@ -51,5 +51,5 @@ if (ENAFORE_IS_BROWSER) {
   })
   console.info(String.raw`  /|\    Starting Enafore
 _/_|_)_  Version ${ENAFORE_VERSION}
-\_____/  Built for ${process.env.NODE_ENV}`)
+\_____/  Built for ${ENAFORE_ENV}`)
 }

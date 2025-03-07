@@ -8,14 +8,6 @@
   --status-pad-v: 10px;
   --status-pad-h: 20px;
 
-  @media (max-width: 767px) {
-    --status-pad-h: 10px;
-  }
-
-  @media (max-width: 240px) {
-    --status-pad-h: 5px;
-  }
-
   //
   // Nav and .main-content offset. This is important for things like the sticky header (ComposeStickyButton.html)
   //
@@ -44,22 +36,6 @@
   --main-margin-bottom: 15px;
   --main-border-size: 1px;
 
-  @media (max-width: 991px) {
-    --nav-icon-pad-v: 18px;
-    --nav-icon-pad-h: 10px;
-    --nav-icon-size: 25px;
-    --nav-border-bottom: 0px;
-  }
-
-  @media (max-width: 767px) {
-    --main-content-gap-top: 0px;
-  }
-
-  @media (max-width: 240px) {
-    --nav-icon-pad-v: 10px;
-    --nav-icon-pad-h: 0px;
-  }
-
   // Used for moving the nav bar to the bottom
   --nav-top: 0px;
   --nav-bottom: initial;
@@ -76,4 +52,27 @@
     --focus-width: 3px;
   }
 
+  @media (max-width: 767px) {
+    --status-pad-h: 10px;
+  }
+
+  @media (max-width: 240px) {
+    --status-pad-h: 5px;
+  }
+
+  @media (max-width: 991px) {
+    --nav-icon-pad-v: 18px;
+    --nav-icon-pad-h: 10px;
+    --nav-icon-size: 25px;
+    --nav-border-bottom: 0px;
+  }
+
+  @media (max-width: 767px) {
+    --main-content-gap-top: 0px;
+  }
+
+  @media (max-width: 240px) {
+    --nav-icon-pad-v: 10px;
+    --nav-icon-pad-h: 0px;
+  }
 }

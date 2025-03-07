@@ -1,4 +1,6 @@
-$scrollbar-face: #{lighten($main-theme-color, 5%)} !default;
-$scrollbar-track: #{lighten($body-bg-color, 7%)} !default;
+@use "sass:color";
 
-@import "_scrollbars.scss";
+$scrollbar-face: #{color.adjust($main-theme-color, $lightness: 5%)} !default;
+$scrollbar-track: #{color.adjust($body-bg-color, $lightness: 7%)} !default;
+
+@import "./_scrollbars.scss";

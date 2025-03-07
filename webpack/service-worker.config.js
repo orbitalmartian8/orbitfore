@@ -44,6 +44,7 @@ export default {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(mode),
+      ENAFORE_ENV: JSON.stringify(mode),
       'process.env.SAPPER_TIMESTAMP': process.env.SAPPER_TIMESTAMP || Date.now(),
       'process.env.LOCALE': JSON.stringify(LOCALE),
       ENAFORE_IS_SERVICE_WORKER: 'true',

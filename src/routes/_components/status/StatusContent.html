@@ -125,6 +125,8 @@
         if (renderPromise) {
           renderPromise.then(() => {
             this.fire('recalculateHeight')
+          }, (e) => {
+            console.warn('unrecoverable KaTeX error:', e)
           })
         }
       },

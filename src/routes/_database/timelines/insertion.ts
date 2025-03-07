@@ -34,7 +34,10 @@ export function putStatus(statusesStore: IDBObjectStore, status: any) {
 
 function putAccount(accountsStore: IDBObjectStore, account: any) {
   try {
-    accountsStore.put(cloneForStorage(account))
+    // sometimes akkoma gives us "account": {}
+    if (account.acct) {
+      accountsStore.put(cloneForStorage(account))
+    }
   } catch (e) {
     console.warn(e)
   }
