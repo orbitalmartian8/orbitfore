@@ -2,12 +2,13 @@ import { post, paramsString, WRITE_TIMEOUT } from '../_utils/ajax.js'
 import { basename } from './utils.js'
 
 const WEBSITE = 'https://enafore.social'
+const CLIENT_NAME = "Orbitalfore"
 const SCOPES = 'read write follow push'
 
 export function registerApplication (instanceName, redirectUri) {
   const url = `${basename(instanceName)}/api/v1/apps`
   return post(url, {
-    client_name: Orbitalfore,
+    client_name: CLIENT_NAME,
     redirect_uris: redirectUri,
     scopes: SCOPES,
     website: ENAFORE_IS_BROWSER ? location.origin : WEBSITE
