@@ -1,7 +1,7 @@
 import { post, paramsString, WRITE_TIMEOUT } from '../_utils/ajax.js'
 import { basename } from './utils.js'
 
-const WEBSITE = 'https://orbitalmartian.vercel.app'
+const WEBSITE = 'https://enafore.social'
 const SCOPES = 'read write follow push'
 
 export function registerApplication (instanceName, redirectUri) {
