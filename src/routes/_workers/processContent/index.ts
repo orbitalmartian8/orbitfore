@@ -45,6 +45,9 @@ registerPromiseWorker(
         mentionsByURL.set(mention.url, mention)
         mentionsByAcct.set(mention.acct, mention)
         mentionsByLowerAcct.set(mention.acct.toLowerCase(), mention)
+        const acct2 = mention.username + '@' + new URL(mention.url).hostname
+        mentionsByAcct.set(acct2, mention)
+        mentionsByLowerAcct.set(acct2.toLowerCase(), mention)
       }
     }
     if (mfmContent) {

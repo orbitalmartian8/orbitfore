@@ -1,50 +1,59 @@
+// @ts-check
 import crypto from 'crypto'
-import fs from 'fs'
-import { promisify } from 'util'
+import { writeFile } from 'fs/promises'
 import path from 'path'
-import { cpus } from 'os'
-import { rollup } from 'rollup'
-import terser from '@rollup/plugin-terser'
-import replace from '@rollup/plugin-replace'
-import terserOptions from './terserOptions.js'
 import { inlineThemeColors } from '../webpack/shared.config.js'
 import { sapperInlineScriptChecksums } from '../src/server/sapperInlineScriptChecksums.js'
+import { build } from 'esbuild'
+import applyIntl from '../webpack/svelte-intl-loader.js'
+import MagicString from 'magic-string'
+import remap from '@ampproject/remapping'
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname)
-const writeFile = promisify(fs.writeFile)
 
 async function buildInlineScriptAndCSP () {
-  const inlineScriptPath = path.join(__dirname, '../src/inline-script/inline-script.js')
+  const inlineScriptPath = path.join(
+    __dirname,
+    '../src/inline-script/inline-script.js'
+  )
 
-  const bundle = await rollup({
-    input: inlineScriptPath,
-    plugins: [
-      replace({
-        values: {
-          ENAFORE_IS_BROWSER: 'true',
-          'process.env.THEME_COLORS': JSON.stringify(inlineThemeColors)
-        },
-        preventAssignment: false
-      }),
-      // TODO: can't disable terser at all, it causes the CSP checksum to stop working
-      // because the HTML gets minified as some point so the checksums don't match.
-      terser(Object.defineProperties({ ...terserOptions, mangle: !process.env.DEBUG }, {
-        maxWorkers: {
-          value: cpus().length || 1,
-          enumerable: false
-        }
-      }))
-    ]
-  })
-  const { output } = await bundle.generate({
+  const bundle = await build({
+    entryPoints: [inlineScriptPath],
+    define: {
+      ENAFORE_IS_BROWSER: 'true',
+      'process.env.THEME_COLORS': JSON.stringify(inlineThemeColors)
+    },
+    minify: true,
+    bundle: true,
     format: 'iife',
-    sourcemap: 'hidden'
+    sourcemap: 'external',
+    write: false,
+    outfile: 'inline-script.js',
+    sourceRoot: 'webpack:///'
   })
+  /** @type {{js: string, map:string}} */
+  let { js, map } = Object.fromEntries(
+    bundle.outputFiles.map((e) => [e.path.split('.').at(-1), e.text])
+  )
 
-  const { code, map } = output[0]
+  let ms = new MagicString(js)
+  ms = applyIntl(ms)
+  js = ms.toString() + '//# sourceMappingURL=/inline-script.js.map'
+  map = remap(
+    [
+      ms.generateMap({
+        includeContent: true,
+        hires: 'boundary'
+      }),
+      JSON.parse(map)
+    ],
+    () => null
+  ).toString()
 
-  const fullCode = `${code}//# sourceMappingURL=/inline-script.js.map`
-  const SCRIPT_CHECKSUMS = [crypto.createHash('sha256').update(fullCode, 'utf8').digest('base64'), ...sapperInlineScriptChecksums]
+  const SCRIPT_CHECKSUMS = [
+    crypto.createHash('sha256').update(js, 'utf8').digest('base64'),
+    ...sapperInlineScriptChecksums
+  ]
     .map((_) => `'sha256-${_}'`)
     .join(' ')
   const policy = [
@@ -61,10 +70,13 @@ async function buildInlineScriptAndCSP () {
     "form-action 'self' https://duckduckgo.com", // we need form-action for the Web Share Target API and MFM [search] tags
     "base-uri 'self'"
   ].join(';')
-  await writeFile(path.resolve(__dirname, '../static/inline-script.js.map'),
-    map.toString(), 'utf8')
+  await writeFile(
+    path.resolve(__dirname, '../static/inline-script.js.map'),
+    map,
+    'utf8'
+  )
   return {
-    inlineScript: `<script>${fullCode}</script>`,
+    inlineScript: `<script>${js}</script>`,
     csp: `<meta http-equiv="Content-Security-Policy" content="${policy}" />`
   }
 }
@@ -74,7 +86,7 @@ export function buildInlineScript (context) {
     return context.inlineScript
   } else {
     const promise = buildInlineScriptAndCSP()
-    context.inlineScript = promise.then(e => e.inlineScript)
-    return promise.then(e => e.csp)
+    context.inlineScript = promise.then((e) => e.inlineScript)
+    return promise.then((e) => e.csp)
   }
 }

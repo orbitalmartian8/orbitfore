@@ -77,12 +77,7 @@ export default {
         test: /\.ts$/,
         use: [
           !(dev || process.env.DEBUG) && '@easrng/elements/minify',
-          {
-            loader: '@sucrase/webpack-loader',
-            options: {
-              transforms: ['typescript']
-            }
-          }
+          'esbuild-loader'
         ],
         exclude: /node_modules/
       },

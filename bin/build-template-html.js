@@ -1,6 +1,6 @@
 import chokidar from 'chokidar'
-import { existsSync, readFileSync } from 'fs'
-import { mkdir, rm, writeFile } from 'fs/promises'
+import { readFileSync } from 'fs'
+import { writeFile } from 'fs/promises'
 import path from 'path'
 import { buildSass } from './build-sass.js'
 import { buildInlineScript } from './build-inline-script.js'
@@ -10,7 +10,6 @@ import { debounce } from '../src/routes/_thirdparty/lodash/timers.js'
 import applyIntl from '../webpack/svelte-intl-loader.js'
 import { LOCALE } from '../src/routes/_static/intl.js'
 import rtlDetectPackage from 'rtl-detect'
-import { isUpstream } from '../webpack/shared.config.js'
 
 const { getLangDir } = rtlDetectPackage
 
@@ -103,18 +102,7 @@ async function buildAll () {
   html = applyIntl(html)
     .replace('{process.env.LOCALE}', LOCALE)
     .replace('{process.env.LOCALE_DIRECTION}', LOCALE_DIRECTION)
-    .replace('{relMe}', isUpstream ? '<link rel="me" href="https://meta.enafore.social/@enafore">' : '')
   await writeFile(path.resolve(__dirname, '../src/template.html'), html, 'utf8')
-  if (isUpstream) {
-    await mkdir(path.resolve(__dirname, '../static/.well-known'), {
-      recursive: true
-    })
-    await writeFile(path.resolve(__dirname, '../static/.well-known/host-meta'), '<?xml version="1.0" encoding="UTF-8"?><XRD xmlns="http://docs.oasis-open.org/ns/xri/xrd-1.0"><Link rel="lrdd" type="application/xrd+xml" template="https://meta.enafore.social/.well-known/webfinger?resource={uri}"></Link></XRD>', 'utf8')
-  } else if (existsSync(path.resolve(__dirname, '../static/.well-known'))) {
-    await rm(path.resolve(__dirname, '../static/.well-known'), {
-      recursive: true
-    })
-  }
   const end = performance.now()
   console.log(`Built template.html in ${(end - start).toFixed(2)}ms`)
 }
