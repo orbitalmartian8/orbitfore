@@ -13,14 +13,14 @@ export default {
   logIn: 'Log in',
   footer: `
     <p>
-      OrbitalFore is <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">open-source software</a> distributed under the
+      Orbitalfore is <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">open-source software</a> distributed under the
       <a rel="noopener" target="_blank"
          href="https://github.com/enafore/enafore/blob/main/LICENSE">AGPL License</a>.
       Here is the <a href="/settings/about#privacy-policy" rel="prefetch">privacy policy</a>.
     </p>
   `,
   // Manifest
-  newStatus: 'New post',
+  newStatus: 'New toot',
   // Generic UI
   loading: 'Loading',
   okay: 'OK',
@@ -286,31 +286,31 @@ export default {
   additionalComments: 'Additional comments',
   forwardDescription: 'Forward to the moderators of {instance} as well?',
   forwardLabel: 'Forward to {instance}',
-  unableToLoadStatuses: 'Unable to load recent posts: {error}',
+  unableToLoadStatuses: 'Unable to load recent toots: {error}',
   report: 'Report',
   noContent: '(No content)',
-  noStatuses: 'No posts to report',
+  noStatuses: 'No toots to report',
   // Status options
   unpinFromProfile: 'Unpin from profile',
   pinToProfile: 'Pin to profile',
   muteConversation: 'Mute conversation',
   unmuteConversation: 'Unmute conversation',
-  bookmarkStatus: 'Bookmark post',
-  unbookmarkStatus: 'Unbookmark post',
+  bookmarkStatus: 'Bookmark toot',
+  unbookmarkStatus: 'Unbookmark toot',
   deleteAndRedraft: 'Delete and redraft',
-  reportStatus: 'Report post',
-  translateStatus: 'Translate post',
-  translated: `Translated post from {from}{detected, select,
+  reportStatus: 'Report toot',
+  translateStatus: 'Translate toot',
+  translated: `Translated toot from {from}{detected, select,
     true { - Detected}
     other {}
   }`,
-  translateError: 'There was an error translating this post',
+  translateError: 'There was an error translating this toot',
   translating: 'Translating...',
   hideTranslation: 'Hide translation',
-  reactToStatus: 'React to post',
-  quoteStatus: 'Quote post',
-  shareStatus: 'Share post',
-  copyLinkToStatus: 'Copy link to post',
+  reactToStatus: 'React to toot',
+  quoteStatus: 'Quote toot',
+  shareStatus: 'Share toot',
+  copyLinkToStatus: 'Copy link to toot',
   // Account profile
   profileForAccount: 'Profile for {account}',
   statisticsAndMoreOptions: 'Stats and more options',
