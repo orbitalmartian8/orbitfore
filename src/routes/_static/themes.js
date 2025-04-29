@@ -121,7 +121,7 @@ const themes = [
   },
   {
     name: 'catppuccin-machiato',
-    label: 'Catppuccin Machiaro', // user-visible name
+    label: 'intl.themeCatppuccinMachiatto', // user-visible name
     color: '#8aadf4', // main theme color
     dark: true // whether it's a dark theme or not
   }
