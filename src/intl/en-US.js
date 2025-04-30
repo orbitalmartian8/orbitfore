@@ -354,7 +354,7 @@ export default {
   </p>
   <h2 id="customisations">Customisations</h2>
   <p>• Changed "status" and "post" to "toot".</p>
-  <p>• Catppuccin Machiatto theme</p>
+  <p>• Catppuccin Macchiato theme</p>
   <hr />
   <p>
     Orbitalfore is <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">open-source</a> software.
