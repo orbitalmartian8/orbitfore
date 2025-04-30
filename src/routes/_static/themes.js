@@ -120,8 +120,8 @@ const themes = [
     color: '#83254F'
   },
   {
-    name: 'catppuccin-Macchiato', // visible name
-    label: 'intl.themeCatppuccinMachiatto', // translated-visible name
+    name: 'catppuccin-macchiato', // visible name
+    label: 'intl.themeCatppuccinMacchiato', // translated-visible name
     dark: true // whether it's a dark theme or not
     color: '#8aadf4', // main theme color
   }
