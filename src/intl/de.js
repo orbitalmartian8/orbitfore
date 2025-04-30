@@ -1,10 +1,10 @@
 export default {
   // Home page, basic <title> and <description>
-  appName: 'Enafore',
+  appName: 'Orbitfore',
   appDescription: 'Ein alternativer Web Client für Mastodon, der auf Geschwindigkeit und einfache Bedienung ausgelegt ist.',
   homeDescription: `
     <p>
-      Enafore ist ein Web Client für
+      Orbitfore ist ein Web Client für
       <a rel="noopener" target="_blank" href="https://joinmastodon.org">Mastodon</a>,
       der für Geschwindigkeit und einfache Bedienung konzipiert wurde.
     </p>
@@ -14,14 +14,14 @@ export default {
   logIn: 'Anmelden',
   footer: `
     <p>
-      Enafore ist
-      <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">quelloffene Software</a>,
+      Orbitfore ist
+      <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">quelloffene Software</a>,
       erstellt von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>
       und verteilt unter der
       <a rel="noopener" target="_blank"
-         href="https://github.com/enafore/enafore/blob/main/LICENSE">AGPL Lizenz</a>.
+         href="https://github.com/orbitalmartian8/orbitfore/LICENSE">AGPL Lizenz</a>.
       Hier ist die <a href="/settings/about#privacy-policy" rel="prefetch">Datenschutzerklärung</a>.
-      Es ist eine Fortsetzung des Enafore-Projekts von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
+      Es ist eine Fortsetzung des Orbitfore-Projekts von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
     </p>
   `,
   // Generic UI
@@ -172,7 +172,7 @@ export default {
     ·
     {showInstanceName, select,
       true {{instanceName}}
-      other {Enafore}
+      other {orbitfore}
     }
   `,
   pinLabel: `{label} {pinnable, select,
@@ -314,29 +314,29 @@ export default {
   verified: 'Verified',
   // About page
   about: 'Über',
-  aboutApp: 'Über Enafore',
+  aboutApp: 'Über Orbitfore',
   aboutAppDescription: `
   <p>
-    Enafore ist
+    orbitfore ist
     <a rel="noopener" target="_blank"
-       href="https://github.com/enafore/enafore">freie und quelloffene Software</a>
+       href="https://github.com/orbitalmartian8/orbitfore">freie und quelloffene Software</a>
     erstellt von
     <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>
     und verteilt unter der
     <a rel="noopener" target="_blank"
-       href="https://github.com/enafore/enafore/blob/main/LICENSE">GNU Affero General Public License</a>.
+       href="https://github.com/orbitalmartian8/orbitfore/LICENSE">GNU Affero General Public License</a>.
   </p>
 
   <h2 id="privacy-policy">Datenschutzerklärung</h2>
 
   <p>
-    Enafore speichert keine persönlichen Informationen auf seinen Servern,
+    Orbitfore speichert keine persönlichen Informationen auf seinen Servern,
     einschließlich, aber nicht beschränkt auf, Namen, E-Mail-Adressen,
     IP-Adressen, Beiträgen, und Fotos.
   </p>
 
   <p>
-    Enafore ist eine statische Seite. Alle Daten werden lokal in Ihrem Browser gespeichert und mit den Instanzen des Fediversums geteilt, zu denen Sie sich verbinden.
+    Orbitfore ist eine statische Seite. Alle Daten werden lokal in Ihrem Browser gespeichert und mit den Instanzen des Fediversums geteilt, zu denen Sie sich verbinden.
   </p>
 
   <h2>Mitwirkende</h2>
@@ -404,7 +404,7 @@ export default {
   notificationFilters: 'Filter für Benachrichtigungen',
   pushNotifications: 'Push-Benachrichtigungen',
   // Add instance page
-  storageError: 'Es sieht so aus als ob Enafore lokal keine Daten speichern kann. Ist Dein Browser im privaten Modus oder blockiert Cookies? Enafore speichert alle Daten lokal und braucht zum ordnungsgemäßen Betrieb LocalStorage und IndexedDB.',
+  storageError: 'Es sieht so aus als ob Orbitfore lokal keine Daten speichern kann. Ist Dein Browser im privaten Modus oder blockiert Cookies? Orbitfore speichert alle Daten lokal und braucht zum ordnungsgemäßen Betrieb LocalStorage und IndexedDB.',
   javaScriptError: 'Du musst zum Einloggen javaScript einschalten.',
   enterInstanceName: 'Namen der Instanz eingeben',
   instanceColon: 'Instanz:',
@@ -424,7 +424,7 @@ export default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Melde Dich bei einer Instanz an',
-  logInToAnInstancePost: 'um Enafore zu verwenden.',
+  logInToAnInstancePost: 'um Orbitfore zu verwenden.',
   // Another custom tooltip
   showRingPre: 'Immer einen',
   showRingText: 'Fokusring',
