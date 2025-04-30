@@ -1,4 +1,4 @@
-export default {
+cdexport default {
   // Home page, basic <title> and <description>
   appName: 'Orbitfore',
   appDescription: 'Альтернативный веб-клиент для Mastodon, ориентированный на скорость и простоту.',
