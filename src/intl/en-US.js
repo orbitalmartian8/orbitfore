@@ -616,7 +616,7 @@ export default {
   themePitchBlack: 'Pitch Black',
   themeDarkGrayscale: 'Dark Grayscale',
   themeCohostLight: 'Cohost Light',
-  themeCatppuccinMachiatto: 'Catppuccin Machiatto',
+  themeCatppuccinMacchiato: 'Catppuccin Macchiato',
   // Polls
   voteOnPoll: 'Vote on poll',
   pollChoices: 'Poll choices',

@@ -555,6 +555,7 @@ export default {
   themeMastodon: 'Mastodon',
   themePitchBlack: 'Tono negro',
   themeDarkGrayscale: 'Escala de gris oscuro',
+  themeCatppuccinMacchiato: 'Catppuccin Macchiato',
   // Polls
   voteOnPoll: 'Votar en encuesta',
   pollChoices: 'Opciones de la encuesta',

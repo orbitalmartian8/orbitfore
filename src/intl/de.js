@@ -520,7 +520,8 @@ export default {
   themeHacker: 'Hacker',
   themeMastodon: 'Mastodon',
   themePitchBlack: 'Pitch Black',
-  themeDarkGrayscale: 'Dark Grayscale',
+  themeDarkGreyscale: 'Dark Grayscale',
+  themeCatppuccinMacchiato: 'Catppuccin Macchiato',
   // Polls
   voteOnPoll: 'In dieser Umfrage abstimmen',
   pollChoices: 'Auswahlmöglichkeiten',
