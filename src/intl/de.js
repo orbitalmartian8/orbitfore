@@ -19,7 +19,7 @@ export default {
       erstellt von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>
       und verteilt unter der
       <a rel="noopener" target="_blank"
-         href="https://github.com/orbitalmartian8/orbitfore/LICENSE">AGPL Lizenz</a>.
+         href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL Lizenz</a>.
       Hier ist die <a href="/settings/about#privacy-policy" rel="prefetch">Datenschutzerklärung</a>.
       Es ist eine Fortsetzung des Orbitfore-Projekts von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
     </p>
@@ -324,7 +324,7 @@ export default {
     <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>
     und verteilt unter der
     <a rel="noopener" target="_blank"
-       href="https://github.com/orbitalmartian8/orbitfore/LICENSE">GNU Affero General Public License</a>.
+       href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">GNU Affero General Public License</a>.
   </p>
 
   <h2 id="privacy-policy">Datenschutzerklärung</h2>

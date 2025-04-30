@@ -23,7 +23,7 @@ cdexport default {
       <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>
       и распространяемое под лицензией
       <a rel="noopener" target="_blank"
-         href="https://github.com/orbitalmartian8/orbitfore/LICENSE">AGPL License</a>.
+         href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL License</a>.
       Здесь <a href="/settings/about#privacy-policy" rel="prefetch">политика конфиденциальности</a>.
       Это продолжение проекта Orbitfore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
     </p>
@@ -333,7 +333,7 @@ cdexport default {
     <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">программное обеспечение с открытым исходным кодом</a>.
     и распространяемое под лицензией
     <a rel="noopener" target="_blank"
-      href="https://github.com/orbitalmartian8/orbitfore/LICENSE">AGPL License</a>.
+      href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL License</a>.
     Это продолжение проекта Orbitfore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
   </p>
 

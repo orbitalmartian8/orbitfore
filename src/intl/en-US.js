@@ -15,7 +15,7 @@ export default {
     <p>
       Orbitalfore is <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">open-source software</a> distributed under the
       <a rel="noopener" target="_blank"
-         href="https://github.com/orbitalmartian8/orbitfore/LICENSE">AGPL License</a>.
+         href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL License</a>.
       Here is the <a href="/settings/about#privacy-policy" rel="prefetch">privacy policy</a>.
     </p>
   `,
@@ -393,7 +393,7 @@ export default {
   </p>
 
   <p>
-    Orbitfore is licensed under the <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore/LICENSE">GNU Affero General Public License</a>.
+    Orbitfore is licensed under the <a rel="noopener" target="_blank" href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">GNU Affero General Public License</a>.
   </p>
 
   <h2>Version</h2>
