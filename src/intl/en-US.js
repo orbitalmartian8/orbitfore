@@ -4,7 +4,7 @@ export default {
   appDescription: 'A fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.',
   homeDescription: `
     <p>
-      Orbitfore is a fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.
+      Orbitalfore is a fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.
     </p>`,
   homeMultiInstance: `
     <p>
@@ -357,7 +357,7 @@ export default {
   <p>• Catppuccin Machiatto theme</p>
   <hr />
   <p>
-    Orbitfore is <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">open-source</a> software.
+    Orbitalfore is <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">open-source</a> software.
   </p>
 
   <h2 id="privacy-policy">Privacy Policy</h2>
@@ -393,13 +393,13 @@ export default {
   </p>
 
   <p>
-    Orbitfore is licensed under the <a rel="noopener" target="_blank" href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">GNU Affero General Public License</a>.
+    Orbitalfore is licensed under the <a rel="noopener" target="_blank" href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">GNU Affero General Public License</a>.
   </p>
 
   <h2>Version</h2>
 
   <p>
-    You are running Orbitfore version <code class="Orbitfore-version"></code>.
+    You are running Orbitalfore version <code class="Orbitalfore-version"></code>.
   </p>`,
   logs: 'Logs',
   // Settings
@@ -469,8 +469,8 @@ export default {
   notificationFilters: 'Notification filters',
   pushNotifications: 'Push notifications',
   // Add instance page
-  storageError: `It seems Orbitfore cannot store data locally. Is your browser in private mode
-          or blocking cookies? Orbitfore stores all data locally, and requires LocalStorage and
+  storageError: `It seems Orbitalfore cannot store data locally. Is your browser in private mode
+          or blocking cookies? Orbitalfore stores all data locally, and requires LocalStorage and
           IndexedDB to work correctly.`,
   javaScriptError: 'You must enable JavaScript to log in.',
   enterInstanceName: 'Enter instance name',
@@ -491,7 +491,7 @@ export default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Log in to an instance',
-  logInToAnInstancePost: 'to start using Orbitfore.',
+  logInToAnInstancePost: 'to start using Orbitalfore.',
   // Another custom tooltip
   showRingPre: 'Always show',
   showRingText: 'focus ring',

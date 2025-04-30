@@ -1,10 +1,10 @@
 export default {
   // Home page, basic <title> and <description>
-  appName: 'Orbitfore',
+  appName: 'Orbitalfore',
   appDescription: 'Ein alternativer Web Client für Mastodon, der auf Geschwindigkeit und einfache Bedienung ausgelegt ist.',
   homeDescription: `
     <p>
-      Orbitfore ist ein Web Client für
+      Orbitalfore ist ein Web Client für
       <a rel="noopener" target="_blank" href="https://joinmastodon.org">Mastodon</a>,
       der für Geschwindigkeit und einfache Bedienung konzipiert wurde.
     </p>
@@ -14,14 +14,14 @@ export default {
   logIn: 'Anmelden',
   footer: `
     <p>
-      Orbitfore ist
+      Orbitalfore ist
       <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">quelloffene Software</a>,
       erstellt von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>
       und verteilt unter der
       <a rel="noopener" target="_blank"
          href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL Lizenz</a>.
       Hier ist die <a href="/settings/about#privacy-policy" rel="prefetch">Datenschutzerklärung</a>.
-      Es ist eine Fortsetzung des Orbitfore-Projekts von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
+      Es ist eine Fortsetzung des Orbitalfore-Projekts von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
     </p>
   `,
   // Generic UI
@@ -172,7 +172,7 @@ export default {
     ·
     {showInstanceName, select,
       true {{instanceName}}
-      other {orbitfore}
+      other {Orbitalfore}
     }
   `,
   pinLabel: `{label} {pinnable, select,
@@ -314,10 +314,10 @@ export default {
   verified: 'Verified',
   // About page
   about: 'Über',
-  aboutApp: 'Über Orbitfore',
+  aboutApp: 'Über Orbitalfore',
   aboutAppDescription: `
   <p>
-    orbitfore ist
+    Orbitalfore ist
     <a rel="noopener" target="_blank"
        href="https://github.com/orbitalmartian8/orbitfore">freie und quelloffene Software</a>
     erstellt von
@@ -330,13 +330,13 @@ export default {
   <h2 id="privacy-policy">Datenschutzerklärung</h2>
 
   <p>
-    Orbitfore speichert keine persönlichen Informationen auf seinen Servern,
+    Orbitalfore speichert keine persönlichen Informationen auf seinen Servern,
     einschließlich, aber nicht beschränkt auf, Namen, E-Mail-Adressen,
     IP-Adressen, Beiträgen, und Fotos.
   </p>
 
   <p>
-    Orbitfore ist eine statische Seite. Alle Daten werden lokal in Ihrem Browser gespeichert und mit den Instanzen des Fediversums geteilt, zu denen Sie sich verbinden.
+    Orbitalfore ist eine statische Seite. Alle Daten werden lokal in Ihrem Browser gespeichert und mit den Instanzen des Fediversums geteilt, zu denen Sie sich verbinden.
   </p>
 
   <h2>Mitwirkende</h2>
@@ -404,7 +404,7 @@ export default {
   notificationFilters: 'Filter für Benachrichtigungen',
   pushNotifications: 'Push-Benachrichtigungen',
   // Add instance page
-  storageError: 'Es sieht so aus als ob Orbitfore lokal keine Daten speichern kann. Ist Dein Browser im privaten Modus oder blockiert Cookies? Orbitfore speichert alle Daten lokal und braucht zum ordnungsgemäßen Betrieb LocalStorage und IndexedDB.',
+  storageError: 'Es sieht so aus als ob Orbitalfore lokal keine Daten speichern kann. Ist Dein Browser im privaten Modus oder blockiert Cookies? Orbitalfore speichert alle Daten lokal und braucht zum ordnungsgemäßen Betrieb LocalStorage und IndexedDB.',
   javaScriptError: 'Du musst zum Einloggen javaScript einschalten.',
   enterInstanceName: 'Namen der Instanz eingeben',
   instanceColon: 'Instanz:',
@@ -424,7 +424,7 @@ export default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Melde Dich bei einer Instanz an',
-  logInToAnInstancePost: 'um Orbitfore zu verwenden.',
+  logInToAnInstancePost: 'um Orbitalfore zu verwenden.',
   // Another custom tooltip
   showRingPre: 'Immer einen',
   showRingText: 'Fokusring',

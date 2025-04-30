@@ -1,10 +1,10 @@
-cdexport default {
+export default {
   // Home page, basic <title> and <description>
-  appName: 'Orbitfore',
+  appName: 'Orbitalfore',
   appDescription: 'Альтернативный веб-клиент для Mastodon, ориентированный на скорость и простоту.',
   homeDescription: `
     <p>
-    Orbitfore — веб-клиент для
+    Orbitalfore — веб-клиент для
       <a rel="noopener" target="_blank" href="https://joinmastodon.org">Mastodon</a>,
       разработан для скорости и простоты.
     </p>
@@ -17,7 +17,7 @@ cdexport default {
   logIn: 'Войти',
   footer: `
     <p>
-      Orbitfore — это
+      Orbitalfore — это
       <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">программное обеспечение с открытым исходным кодом</a>
       созданное
       <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>
@@ -25,7 +25,7 @@ cdexport default {
       <a rel="noopener" target="_blank"
          href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL License</a>.
       Здесь <a href="/settings/about#privacy-policy" rel="prefetch">политика конфиденциальности</a>.
-      Это продолжение проекта Orbitfore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
+      Это продолжение проекта Orbitalfore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
     </p>
   `,
   // Manifest
@@ -176,7 +176,7 @@ cdexport default {
     }
     {showInstanceName, select,
       true {{instanceName}}
-      other {Orbitfore}
+      other {Orbitalfore}
     }
     ·
     {name}
@@ -326,27 +326,27 @@ cdexport default {
   verified: 'Verified',
   // About page
   about: 'О нас',
-  aboutApp: 'О Orbitfore',
+  aboutApp: 'О Orbitalfore',
   aboutAppDescription: `
   <p>
-    Orbitfore — это
+    Orbitalfore — это
     <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">программное обеспечение с открытым исходным кодом</a>.
     и распространяемое под лицензией
     <a rel="noopener" target="_blank"
       href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL License</a>.
-    Это продолжение проекта Orbitfore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
+    Это продолжение проекта Orbitalfore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
   </p>
 
   <h2 id="privacy-policy">Политика конфиденциальности</h2>
 
   <p>
-    Orbitfore не хранит никакой личной информации на своих серверах,
+    Orbitalfore не хранит никакой личной информации на своих серверах,
     включая, помимо прочего, имена, адреса электронной почты,
     IP-адреса, сообщения и фотографии.
   </p>
 
   <p>
-  Orbitfore — это статический сайт. Все данные хранятся локально в вашем браузере и передаются через Федиверс
+  Orbitalfore — это статический сайт. Все данные хранятся локально в вашем браузере и передаются через Федиверс
     инстансы, к которым вы подключаетесь.
   </p>
 
@@ -422,8 +422,8 @@ cdexport default {
   notificationFilters: 'Фильтры уведомлений',
   pushNotifications: 'Всплывающее уведомление',
   // Add instance page
-  storageError: `Похоже, Orbitfore не может хранить данные локально. Ваш браузер находится в приватном режиме
-          или блокирует файлов cookie? Orbitfore хранит все данные локально, и для этого требуется LocalStorage и
+  storageError: `Похоже, Orbitalfore не может хранить данные локально. Ваш браузер находится в приватном режиме
+          или блокирует файлов cookie? Orbitalfore хранит все данные локально, и для этого требуется LocalStorage и
           IndexedDB для корректной работы.`,
   javaScriptError: 'Вы должны включить JavaScript, чтобы войти в систему.',
   enterInstanceName: 'Введите имя инстанса',
@@ -444,7 +444,7 @@ cdexport default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Войти в инстанс',
-  logInToAnInstancePost: 'чтобы начать использовать Orbitfore.',
+  logInToAnInstancePost: 'чтобы начать использовать Orbitalfore.',
   // Another custom tooltip
   showRingPre: 'Всегда показывать',
   showRingText: 'кольцо фокусировки',
