@@ -108,7 +108,7 @@ const themes = [
     color: '#000'
   },
   {
-    name: 'dark-grayscale',
+    name: 'dark-greyscale',
     label: 'intl.themeDarkGrayscale',
     dark: true,
     color: '#666'
@@ -120,10 +120,10 @@ const themes = [
     color: '#83254F'
   },
   {
-    name: 'catppuccin-machiato',
-    label: 'intl.themeCatppuccinMachiatto', // user-visible name
-    color: '#8aadf4', // main theme color
+    name: 'catppuccin-Macchiato', // visible name
+    label: 'intl.themeCatppuccinMachiatto', // translated-visible name
     dark: true // whether it's a dark theme or not
+    color: '#8aadf4', // main theme color
   }
 ]
 
