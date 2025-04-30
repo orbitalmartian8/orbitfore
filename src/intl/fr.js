@@ -519,7 +519,7 @@ export default {
   themeOaken: 'Chêne',
   themeMajesty: 'Majesté',
   themeGecko: 'Gecko',
-  themeGrayscale: 'Echelle gris',
+  themeGreyscale: 'Echelle gris',
   themeOzark: 'Ozark',
   themeCobalt: 'Cobalt',
   themeSorcery: 'Sorcellerie',
@@ -528,7 +528,7 @@ export default {
   themeHacker: 'Hacker',
   themeMastodon: 'Mastodon',
   themePitchBlack: 'Noir complet',
-  themeDarkGrayscale: 'Echelle gris sombre',
+  themeDarkGreyscale: 'Echelle gris sombre',
   themeCatppuccinMacchiato: 'Catppuccin Macchiato',
   // Polls
   voteOnPoll: 'Voter dans cette enquête',

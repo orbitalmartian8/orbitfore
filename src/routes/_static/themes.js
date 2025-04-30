@@ -48,8 +48,8 @@ const themes = [
     color: '#4ab92f'
   },
   {
-    name: 'grayscale',
-    label: 'intl.themeGrayscale',
+    name: 'greyscale',
+    label: 'intl.themeGreyscale',
     dark: false,
     color: '#999999'
   },
@@ -109,7 +109,7 @@ const themes = [
   },
   {
     name: 'dark-greyscale',
-    label: 'intl.themeDarkGrayscale',
+    label: 'intl.themeDarkGreyscale',
     dark: true,
     color: '#666'
   },

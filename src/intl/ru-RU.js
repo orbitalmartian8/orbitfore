@@ -539,7 +539,7 @@ export default {
   themeOaken: 'Oaken',
   themeMajesty: 'Majesty',
   themeGecko: 'Gecko',
-  themeGrayscale: 'Grayscale',
+  themeGreyscale: 'Greyscale',
   themeOzark: 'Ozark',
   themeCobalt: 'Cobalt',
   themeSorcery: 'Sorcery',
@@ -548,7 +548,7 @@ export default {
   themeHacker: 'Hacker',
   themeMastodon: 'Mastodon',
   themePitchBlack: 'Pitch Black',
-  themeDarkGrayscale: 'Dark Grayscale',
+  themeDarkGreyscale: 'Dark Greyscale',
   themeCatppuccinMacchiato: 'Catppuccin Macchiato',
   // Polls
   voteOnPoll: 'Голосовать в опросе',

@@ -511,7 +511,7 @@ export default {
   themeOaken: 'Oaken',
   themeMajesty: 'Majesty',
   themeGecko: 'Gecko',
-  themeGrayscale: 'Grayscale',
+  themeGreyscale: 'Grayscale',
   themeOzark: 'Ozark',
   themeCobalt: 'Cobalt',
   themeSorcery: 'Sorcery',
