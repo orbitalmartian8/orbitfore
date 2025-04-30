@@ -399,7 +399,7 @@ export default {
   <h2>Version</h2>
 
   <p>
-    You are running Orbitalfore version <code class="Orbitalfore-version"></code>.
+    You are running Orbitalfore version <code class="enafore-version"></code>.
   </p>`,
   logs: 'Logs',
   // Settings
