@@ -49,7 +49,7 @@ if (ENAFORE_IS_BROWSER) {
       }
     },
   })
-  console.info(String.raw`  /|\    Starting Enafore
+  console.info(String.raw`  /|\    Starting Orbitalfore
 _/_|_)_  Version ${ENAFORE_VERSION}
 \_____/  Built for ${ENAFORE_ENV}`)
 }

@@ -4,7 +4,7 @@ export default {
   appDescription: 'A fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.',
   homeDescription: `
     <p>
-      Enafore is a fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.
+      Orbitalfore is a fediverse client with better support for Akkoma, glitch-soc, and Iceshrimp instances.
     </p>`,
   homeMultiInstance: `
     <p>
@@ -13,9 +13,9 @@ export default {
   logIn: 'Log in',
   footer: `
     <p>
-      Orbitalfore is <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">open-source software</a> distributed under the
+      Orbitalfore is <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">open-source software</a> distributed under the
       <a rel="noopener" target="_blank"
-         href="https://github.com/enafore/enafore/blob/main/LICENSE">AGPL License</a>.
+         href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL License</a>.
       Here is the <a href="/settings/about#privacy-policy" rel="prefetch">privacy policy</a>.
     </p>
   `,
@@ -354,27 +354,27 @@ export default {
   </p>
   <h2 id="customisations">Customisations</h2>
   <p>• Changed "status" and "post" to "toot".</p>
-  <p>• Catppuccin Machiatto theme</p>
+  <p>• Catppuccin Macchiato theme</p>
   <hr />
   <p>
-    Enafore is <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">open-source</a> software.
+    Orbitalfore is <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">open-source</a> software.
   </p>
 
   <h2 id="privacy-policy">Privacy Policy</h2>
 
   <p>
-    Enafore does not store any personal information on its servers,
+    Orbitalfore does not store any personal information on its servers,
     including but not limited to names, email addresses,
     IP addresses, posts, and photos.
   </p>
 
   <p>
-    Enafore is a static site hosted on Github Pages. All data is stored locally in your browser and shared with the fediverse
+    Orbitalfore is a static site hosted on Github Pages. All data is stored locally in your browser and shared with the fediverse
     instance(s) you connect to.
   </p>
 
   <p>
-    Approximately once per day Enafore will send a request proxied through your instance so I can collect some general statistics. No personal information is sent, only your instance domain is visible.
+    Approximately once per day Orbitalfore will send a request proxied through your instance so I can collect some general statistics. No personal information is sent, only your instance domain is visible.
   </p>
 
   <p>
@@ -393,13 +393,13 @@ export default {
   </p>
 
   <p>
-    Enafore is licensed under the <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore/blob/main/LICENSE">GNU Affero General Public License</a>.
+    Orbitalfore is licensed under the <a rel="noopener" target="_blank" href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">GNU Affero General Public License</a>.
   </p>
 
   <h2>Version</h2>
 
   <p>
-    You are running Enafore version <code class="enafore-version"></code>.
+    You are running Orbitalfore version <code class="enafore-version"></code>.
   </p>`,
   logs: 'Logs',
   // Settings
@@ -469,8 +469,8 @@ export default {
   notificationFilters: 'Notification filters',
   pushNotifications: 'Push notifications',
   // Add instance page
-  storageError: `It seems Enafore cannot store data locally. Is your browser in private mode
-          or blocking cookies? Enafore stores all data locally, and requires LocalStorage and
+  storageError: `It seems Orbitalfore cannot store data locally. Is your browser in private mode
+          or blocking cookies? Orbitalfore stores all data locally, and requires LocalStorage and
           IndexedDB to work correctly.`,
   javaScriptError: 'You must enable JavaScript to log in.',
   enterInstanceName: 'Enter instance name',
@@ -491,7 +491,7 @@ export default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Log in to an instance',
-  logInToAnInstancePost: 'to start using Enafore.',
+  logInToAnInstancePost: 'to start using Orbitalfore.',
   // Another custom tooltip
   showRingPre: 'Always show',
   showRingText: 'focus ring',
@@ -604,7 +604,7 @@ export default {
   themeOaken: 'Oaken',
   themeMajesty: 'Majesty',
   themeGecko: 'Gecko',
-  themeGrayscale: 'Grayscale',
+  themeGreyscale: 'Greyscale',
   themeOzark: 'Ozark',
   themeCobalt: 'Cobalt',
   themeSorcery: 'Sorcery',
@@ -614,9 +614,9 @@ export default {
   themeHacker: 'Hacker',
   themeMastodon: 'Mastodon',
   themePitchBlack: 'Pitch Black',
-  themeDarkGrayscale: 'Dark Grayscale',
+  themeDarkGreyscale: 'Dark Greyscale',
   themeCohostLight: 'Cohost Light',
-  themeCatppuccinMachiatto: 'Catppuccin Machiatto',
+  themeCatppuccinMacchiato: 'Catppuccin Macchiato',
   // Polls
   voteOnPoll: 'Vote on poll',
   pollChoices: 'Poll choices',
