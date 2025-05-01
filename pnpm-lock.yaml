@@ -153,8 +153,8 @@ importers:
         specifier: github:easrng/sapper#f28997e60034db21208d0af07909f11a4c77b574
         version: https://codeload.github.com/easrng/sapper/tar.gz/f28997e60034db21208d0af07909f11a4c77b574
       sass:
-        specifier: ^1.86.0
-        version: 1.86.0
+        specifier: ^1.79.6
+        version: 1.79.6
       standard:
         specifier: ^17.1.2
         version: 17.1.2
