@@ -130,7 +130,6 @@
   import LazyImage from '../LazyImage.html'
   import AutoplayVideo from '../AutoplayVideo.html'
   import { registerClickDelegate } from '../../_utils/delegate.js'
-  import { convertCssPropertyToDataUrl } from '../../_utils/convertCssPropertyToDataUrl.js'
   import { formatIntl } from '../../_utils/formatIntl.js'
 
 export default {
@@ -166,7 +165,7 @@ export default {
         if (!$ignoreBlurhash && decodedBlurhash) {
           return decodedBlurhash
         }
-        return convertCssPropertyToDataUrl('--mask-bg')
+        return true
       },
       blurhash: ({ blurhashToUse, showAsSensitive }) => showAsSensitive && blurhashToUse,
       url: ({ media }) => media.url,

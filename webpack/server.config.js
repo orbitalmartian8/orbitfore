@@ -50,12 +50,7 @@ export default {
       },
       {
         test: /\.ts$/,
-        use: {
-          loader: '@sucrase/webpack-loader',
-          options: {
-            transforms: ['typescript']
-          }
-        },
+        use: 'esbuild-loader',
         exclude: /node_modules/
       },
       {

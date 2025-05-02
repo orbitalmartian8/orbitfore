@@ -118,6 +118,13 @@ export const notificationInfos = {
     target: notification.target,
     ariaLabel: `${name} ${'intl.moved'} ${'@' + notification.target.acct}`,
   }),
+  bite: ({ notification, name }) => ({
+    actionText: 'intl.bite',
+    icon: '#tooth',
+    standalone: true,
+    target: notification.target,
+    ariaLabel: `${name} ${'intl.bite'}`,
+  }),
 } as const satisfies Record<string, null | ((_: any) => NotificationInfo)>
 export const unhandled: (_: any) => NotificationInfo = ({ notification }) => {
   const text = formatIntl('intl.unhandledNotification', {

@@ -77,6 +77,13 @@
 
   :global(.status-content img:not(.inline-custom-emoji)) {
     max-width: 100%;
+    height: auto;
+  }
+
+  :global(.status-content hr) {
+    border-style: solid;
+    border-color: var(--very-deemphasized-text-color);
+    border-width: 0 0 2px;
   }
 
   @media (max-width: 240px) {
