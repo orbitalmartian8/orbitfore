@@ -8,13 +8,14 @@
   <meta name="viewport" content="width=device-width">
   <meta id='theThemeColor' name='theme-color' content='#4169e1' >
   <meta name="description" content="intl.appDescription" >
-
+  
   %sapper.base%
 
   <link id='theManifest' rel='manifest' href='/manifest.json' >
   <link id='theFavicon' rel='icon' type='image/png' href='/icons/favicon.ico' >
   <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" >
   <link rel="stylesheet" href="/theme-sw.css" >
+  {relMe}
   <!-- both of these *-web-app-capable are required, for Chrome on Android and Safari on iOS
        https://developers.google.com/web/fundamentals/native-hardware/fullscreen/ -->
   <meta name="mobile-web-app-capable" content="yes" >
@@ -77,7 +78,7 @@
       display: none;
     }
   </style>
-
+  
   <style id="theFocusVisibleStyle" media="only x">
     /* standard version */
     :focus:not(:focus-visible) {

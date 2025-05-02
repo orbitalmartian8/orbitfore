@@ -1,12 +1,12 @@
-<div class="lazy-image {className ? ' ' + className: ''}" style="{computedStyle}">
+<div class="lazy-image {className ? ' ' + className: ''}" style={computedStyle} >
   <img
     aria-hidden={ariaHidden}
-    alt={blurhash ? '' : alt}
+    {alt}
     {title}
     {width}
     {height}
     src={displaySrc}
-    style="{focusStyle}"
+    style={focusStyle}
     ref:node
   />
 </div>
@@ -50,9 +50,9 @@
       className: ''
     }),
     computed: {
-      computedStyle: ({ background, blurhash }) => {
+      computedStyle: ({ background }) => {
         return [
-          (blurhash || background) && `background: ${blurhash ? 'var(--mask-bg)' : background};`
+          background && `background: ${background};`
         ].filter(Boolean).join('')
       },
       focusStyle: ({ focus }) => {
@@ -64,7 +64,7 @@
         }
         return `object-position: ${coordsToPercent(focus.x)}% ${100 - coordsToPercent(focus.y)}%;`
       },
-      displaySrc: ({ blurhash, error, src, fallback }) => ((blurhash === true && fallback) || blurhash || (error && fallback) || src)
+      displaySrc: ({ blurhash, error, src, fallback }) => (blurhash || (error && fallback) || src)
     }
   }
 </script>

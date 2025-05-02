@@ -499,13 +499,10 @@ export function renderMfm({
               acct += '@' + token.props.host
             }
             const mention =
+              (url && mentionsByURL.get(url)) ||
               mentionsByAcct.get(acct) ||
-              mentionsByLowerAcct.get(acct.toLowerCase()) ||
-              (url ? mentionsByURL.get(url) : null)
-            if (
-              mention?.username.toLowerCase() !==
-              token.props.username.toLowerCase()
-            ) {
+              mentionsByLowerAcct.get(acct.toLowerCase())
+            if (!mention) {
               console.warn('failed to get mention for', '@' + acct)
               const ele = defaultTreeAdapter.createElement('a', HTML, [
                 {

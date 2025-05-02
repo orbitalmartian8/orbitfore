@@ -71,118 +71,37 @@ const isValidHashtagNode = (
   }
 }
 
-const empty = new Map()
-
-/* eslint no-constant-condition:0 */
-const findEndOfMath = function (
-  delimiter: string,
-  text: string,
-  startIndex: number,
-) {
-  // Adapted from
-  // https://github.com/Khan/perseus/blob/master/src/perseus-markdown.jsx
-  let index = startIndex
-  let braceLevel = 0
-
-  const delimLength = delimiter.length
-
-  while (index < text.length) {
-    const character = text[index]
-
-    if (
-      braceLevel <= 0 &&
-      text.slice(index, index + delimLength) === delimiter
-    ) {
-      return index
-    } else if (character === '\\') {
+function consumeBalanced(
+  string: string,
+  open: string,
+  close: string,
+): {
+  consumed: string
+  remaining: string
+} {
+  let balance = 1
+  let index = 0
+  while (index < string.length) {
+    if (string[index] === '\\' && string[index + 1] === open) {
+      balance++
+      index += 2
+    } else if (string[index] === '\\' && string[index + 1] === close) {
+      balance--
+      if (balance === 0) {
+        break
+      }
+      index += 2
+    } else {
       index++
-    } else if (character === '{') {
-      braceLevel++
-    } else if (character === '}') {
-      braceLevel--
     }
-
-    index++
   }
-
-  return -1
+  return {
+    consumed: string.slice(0, index),
+    remaining: string.slice(index + 2),
+  }
 }
 
-const escapeRegex = function (string: string) {
-  return string.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')
-}
-
-const amsRegex = /^\\begin{/
-
-const delimiters = [
-  { left: '$$', right: '$$', display: true },
-  { left: '\\(', right: '\\)', display: false },
-  // LaTeX uses $…$, but it ruins the display of normal `$` in text:
-  // {left: "$", right: "$", display: false},
-  // $ must come after $$
-
-  // Render AMS environments even if outside $$…$$ delimiters.
-  { left: '\\begin{equation}', right: '\\end{equation}', display: true },
-  { left: '\\begin{align}', right: '\\end{align}', display: true },
-  { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
-  { left: '\\begin{gather}', right: '\\end{gather}', display: true },
-  { left: '\\begin{CD}', right: '\\end{CD}', display: true },
-
-  { left: '\\[', right: '\\]', display: true },
-]
-
-const splitAtDelimiters = function (text: string) {
-  let index
-  const data = []
-
-  const regexLeft = new RegExp(
-    '(' + delimiters.map((x) => escapeRegex(x.left)).join('|') + ')',
-  )
-
-  while (true) {
-    index = text.search(regexLeft)
-    if (index === -1) {
-      break
-    }
-    if (index > 0) {
-      data.push({
-        type: 'text',
-        data: text.slice(0, index),
-      })
-      text = text.slice(index) // now text starts with delimiter
-    }
-    // ... so this always succeeds:
-    const i = delimiters.findIndex((delim) => text.startsWith(delim.left))
-    index = findEndOfMath(
-      delimiters[i]!.right,
-      text,
-      delimiters[i]!.left.length,
-    )
-    if (index === -1) {
-      break
-    }
-    const rawData = text.slice(0, index + delimiters[i]!.right.length)
-    const math = amsRegex.test(rawData)
-      ? rawData
-      : text.slice(delimiters[i]!.left.length, index)
-    data.push({
-      type: 'math',
-      data: math,
-      rawData,
-      display: delimiters[i]!.display,
-    })
-    text = text.slice(index + delimiters[i]!.right.length)
-  }
-
-  if (text !== '') {
-    data.push({
-      type: 'text',
-      data: text,
-    })
-  }
-
-  return data
-}
+const empty = new Map()
 
 export function renderPostHTMLToDOM({
   content,
@@ -256,18 +175,43 @@ export function renderPostHTMLToDOM({
     const frag = defaultTreeAdapter.createDocumentFragment()
     for (let text of newNodes) {
       if (typeof text === 'string') {
-        for (const part of splitAtDelimiters(text)) {
-          if (part.type === 'text') {
-            defaultTreeAdapter.insertText(frag, part.data)
-          } else {
-            const codeElement = defaultTreeAdapter.createElement(
-              part.display ? 'pre' : 'code',
-              HTML,
-              [{ name: 'class', value: 'to-katexify' }],
-            )
-            defaultTreeAdapter.insertText(codeElement, part.data)
-            defaultTreeAdapter.appendChild(frag, codeElement)
+        let match
+        while (
+          (match = text.match(/((?<!\$)\$\$(?!\$))|(\\\()|(\\\[)/)) != null
+        ) {
+          const prev = text.slice(0, match.index)
+          if (prev !== '') {
+            defaultTreeAdapter.insertText(frag, prev)
           }
+          text = text.slice((match.index ?? 0) + match[0].length)
+          if (match[1] !== '') {
+            const consumed = text.slice(0, text.indexOf('$$'))
+            const codeElement = defaultTreeAdapter.createElement('code', HTML, [
+              { name: 'class', value: 'to-katexify' },
+            ])
+            defaultTreeAdapter.insertText(codeElement, consumed)
+            defaultTreeAdapter.appendChild(frag, codeElement)
+            text = text.slice(consumed.length + 2)
+          } else if (match[2] !== '') {
+            const { consumed, remaining } = consumeBalanced(text, '(', ')')
+            const codeElement = defaultTreeAdapter.createElement('code', HTML, [
+              { name: 'class', value: 'to-katexify' },
+            ])
+            defaultTreeAdapter.insertText(codeElement, consumed)
+            defaultTreeAdapter.appendChild(frag, codeElement)
+            text = remaining
+          } else if (match[3] !== '') {
+            const { consumed, remaining } = consumeBalanced(text, '[', ']')
+            const codeElement = defaultTreeAdapter.createElement('pre', HTML, [
+              { name: 'class', value: 'to-katexify' },
+            ])
+            defaultTreeAdapter.insertText(codeElement, consumed)
+            defaultTreeAdapter.appendChild(frag, codeElement)
+            text = remaining
+          }
+        }
+        if (text) {
+          defaultTreeAdapter.insertText(frag, text)
         }
       } else {
         defaultTreeAdapter.appendChild(frag, text)
@@ -293,34 +237,30 @@ export function renderPostHTMLToDOM({
     if (href != null) {
       anchor.attrs.push(href)
     }
-    if (!href || /^#/.test(href.value)) {
-      anchor.attrs = []
-      anchor.tagName = 'span'
-      anchor.nodeName = 'span'
-      return
-    }
-    const index = anchor.parentNode?.childNodes.indexOf(anchor)
-    const previousSibling = anchor.parentNode?.childNodes[(index || 0) - 1]
-    let isFriendica
     let tag: string | boolean
     if (
       href != null &&
       (tag = isValidHashtagNode(anchor, normalizedTagNames)) &&
       typeof tag === 'string'
     ) {
-      isFriendica = href.value.includes('/search?tag=')
+      let isFriendica = href.value.includes('/search?tag=')
       const wafrnMatch = href.value.match(/\/dashboard\/search\/([^\/]+)$/)
       const wafrnTag = wafrnMatch
         ? decodeURIComponent(wafrnMatch[1]!)
         : undefined
       if (isFriendica) {
         isFriendica = false
-        if (
-          previousSibling &&
-          defaultTreeAdapter.isTextNode(previousSibling) &&
-          previousSibling.value.endsWith('#')
-        ) {
-          isFriendica = true
+        const parent = anchor.parentNode
+        if (parent) {
+          const index = parent.childNodes.indexOf(anchor)
+          const previousSibling = parent.childNodes[index - 1]
+          if (
+            previousSibling &&
+            defaultTreeAdapter.isTextNode(previousSibling) &&
+            previousSibling.value.endsWith('#')
+          ) {
+            isFriendica = true
+          }
         }
       }
       href.value = `/tags/${encodeURIComponent(tag)}`
@@ -346,15 +286,7 @@ export function renderPostHTMLToDOM({
         (isFriendica ? '' : '#') + (wafrnTag ? wafrnTag : tag),
       )
       return
-    } else if (
-      href != null &&
-      (classList.includes('mention') ||
-        // friendica wtaf
-        (isFriendica =
-          previousSibling &&
-          defaultTreeAdapter.isTextNode(previousSibling) &&
-          previousSibling.value.endsWith('@')))
-    ) {
+    } else if (href != null && classList.includes('mention')) {
       const mention =
         mentionsByURL.get(href.value) ||
         mentionsByAcct.get(textContent(anchor).join('').replace(/^@/, ''))
@@ -363,15 +295,9 @@ export function renderPostHTMLToDOM({
         href.value = `/accounts/${mention.id}`
         c.value = 'mention'
         rel.value = 'nofollow noopener ugc'
-        anchor.attrs.push({
-          name: 'title',
-          value: isFriendica ? mention.acct : `@${mention.acct}`,
-        })
+        anchor.attrs.push({ name: 'title', value: `@${mention.acct}` })
         anchor.childNodes = []
-        defaultTreeAdapter.insertText(
-          anchor,
-          isFriendica ? mention.username : `@${mention.username}`,
-        )
+        defaultTreeAdapter.insertText(anchor, `@${mention.username}`)
         return
       }
     }

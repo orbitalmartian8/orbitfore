@@ -545,7 +545,6 @@ export default {
   reblogCountsHidden: 'Boost counts hidden',
   unhandledNotification: 'Unhandled notification type {type}',
   moved: 'moved to',
-  bite: 'bit you',
   favoriteCountsHidden: 'Favorite counts hidden',
   reactionCountsHidden: 'Reaction counts hidden',
   rebloggedTimes: `Boosted {count, plural,

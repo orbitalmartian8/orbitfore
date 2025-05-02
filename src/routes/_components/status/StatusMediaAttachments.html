@@ -156,7 +156,7 @@
     margin: 5px;
     padding: 6px 10px;
   }
-
+  
   :global(.status-sensitive-media-container.status-sensitive-media-hidden .status-sensitive-media-svg) {
     fill: var(--blurhash-sensitive-text-color);
     background: var(--mask-bg);
@@ -179,7 +179,7 @@
     width: 100%;
     height: 100%;
   }
-
+  
   .status-media.status-media-is-sensitive {
     height: inherit;
     margin: 0;
@@ -212,20 +212,7 @@ export default {
         sensitiveShown ? 'status-sensitive-media-shown' : 'status-sensitive-media-hidden',
         'status-media'
       ),
-      mediaAttachments: ({ originalStatus }) =>
-        originalStatus.media_attachments
-          ? originalStatus.media_attachments.map((e) => {
-            if (
-              e.type === 'unknown' &&
-                /\.(gif|jpe?g|a?png|webp|avif)($|\?|#)/i.test(e.remote_url)
-            ) { return { ...e, type: 'image' } }
-            if (
-              e.type === 'unknown' &&
-                /\.(webm|mp4|m4v)($|\?|#)/i.test(e.remote_url)
-            ) { return { ...e, type: 'video' } }
-            return e
-          })
-          : [],
+      mediaAttachments: ({ originalStatus }) => originalStatus.media_attachments,
       sensitiveShown: ({ $sensitivesShown, uuid }) => !!$sensitivesShown[uuid],
       sensitive: ({ originalStatus, $markMediaAsSensitive, $neverMarkMediaAsSensitive }) => (
         !$neverMarkMediaAsSensitive && ($markMediaAsSensitive || originalStatus.sensitive || originalStatus.spoiler_text)

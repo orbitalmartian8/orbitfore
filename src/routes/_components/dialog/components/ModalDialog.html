@@ -164,10 +164,7 @@
       const { reduceMotion } = store.get()
       this.onPopState = this.onPopState.bind(this)
       this._a11yDialog = new A11yDialog(this.refs.node.parentElement)
-      let hidden = false
       this._a11yDialog.on('hide', async () => {
-        if (hidden) return
-        hidden = true
         window.removeEventListener('popstate', this.onPopState)
         const { statePopped, statePushed, id } = this.get()
         if (statePushed && !statePopped) {
@@ -255,7 +252,7 @@
           requestAnimationFrame(() => {
             window.addEventListener('popstate', this.onPopState)
             this.set({ statePushed: true })
-            history.pushState({ modalStack: [...history.state.modalStack || [], id] }, null, location.href)
+            history.pushState({ modal: id }, null, location.href)
             document.body.classList.toggle('modal-open', true)
             this._a11yDialog.show()
             this.set({ fadedIn: true })
@@ -294,8 +291,9 @@
       },
       onPopState (event) {
         const { id } = this.get()
-        if (!(event.state && event.state.modalStack && event.state.modalStack.includes(id))) {
-          // If the new state doesn't include us, assume that we need to be closed.
+        if (!(event.state && event.state.modal === id)) {
+          // If the new state is not us, just assume that we need to be closed.
+          // This will only fail if modals are ever nested more than 2 levels deep.
           this.set({ statePopped: true })
           this.closeDialog(id)
         }
