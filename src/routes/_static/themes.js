@@ -48,8 +48,8 @@ const themes = [
     color: '#4ab92f'
   },
   {
-    name: 'grayscale',
-    label: 'intl.themeGrayscale',
+    name: 'greyscale',
+    label: 'intl.themeGreyscale',
     dark: false,
     color: '#999999'
   },
@@ -108,8 +108,8 @@ const themes = [
     color: '#000'
   },
   {
-    name: 'dark-grayscale',
-    label: 'intl.themeDarkGrayscale',
+    name: 'dark-greyscale',
+    label: 'intl.themeDarkGreyscale',
     dark: true,
     color: '#666'
   },
@@ -120,10 +120,10 @@ const themes = [
     color: '#83254F'
   },
   {
-    name: 'catppuccin-machiato',
-    label: 'Catppuccin Machiaro', // user-visible name
-    color: '#8aadf4', // main theme color
-    dark: true // whether it's a dark theme or not
+    name: 'catppuccin-macchiato', // visible name
+    label: 'intl.themeCatppuccinMacchiato', // translated-visible name
+    dark: true, // whether it's a dark theme or not
+    color: '#8aadf4' // main theme color
   }
 ]
 

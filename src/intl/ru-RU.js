@@ -1,10 +1,10 @@
 export default {
   // Home page, basic <title> and <description>
-  appName: 'Enafore',
+  appName: 'Orbitalfore',
   appDescription: 'Альтернативный веб-клиент для Mastodon, ориентированный на скорость и простоту.',
   homeDescription: `
     <p>
-    Enafore — веб-клиент для
+    Orbitalfore — веб-клиент для
       <a rel="noopener" target="_blank" href="https://joinmastodon.org">Mastodon</a>,
       разработан для скорости и простоты.
     </p>
@@ -17,15 +17,15 @@ export default {
   logIn: 'Войти',
   footer: `
     <p>
-      Enafore — это
-      <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">программное обеспечение с открытым исходным кодом</a>
+      Orbitalfore — это
+      <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">программное обеспечение с открытым исходным кодом</a>
       созданное
       <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>
       и распространяемое под лицензией
       <a rel="noopener" target="_blank"
-         href="https://github.com/enafore/enafore/blob/main/LICENSE">AGPL License</a>.
+         href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL License</a>.
       Здесь <a href="/settings/about#privacy-policy" rel="prefetch">политика конфиденциальности</a>.
-      Это продолжение проекта Enafore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
+      Это продолжение проекта Orbitalfore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
     </p>
   `,
   // Manifest
@@ -176,7 +176,7 @@ export default {
     }
     {showInstanceName, select,
       true {{instanceName}}
-      other {Enafore}
+      other {Orbitalfore}
     }
     ·
     {name}
@@ -326,27 +326,27 @@ export default {
   verified: 'Verified',
   // About page
   about: 'О нас',
-  aboutApp: 'О Enafore',
+  aboutApp: 'О Orbitalfore',
   aboutAppDescription: `
   <p>
-    Enafore — это
-    <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">программное обеспечение с открытым исходным кодом</a>.
+    Orbitalfore — это
+    <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">программное обеспечение с открытым исходным кодом</a>.
     и распространяемое под лицензией
     <a rel="noopener" target="_blank"
-      href="https://github.com/enafore/enafore/blob/main/LICENSE">AGPL License</a>.
-    Это продолжение проекта Enafore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
+      href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL License</a>.
+    Это продолжение проекта Orbitalfore, созданного <a rel="noopener" target="_blank" href="https://nolanlawson.com">Ноланом Лоусоном</a>.
   </p>
 
   <h2 id="privacy-policy">Политика конфиденциальности</h2>
 
   <p>
-    Enafore не хранит никакой личной информации на своих серверах,
+    Orbitalfore не хранит никакой личной информации на своих серверах,
     включая, помимо прочего, имена, адреса электронной почты,
     IP-адреса, сообщения и фотографии.
   </p>
 
   <p>
-  Enafore — это статический сайт. Все данные хранятся локально в вашем браузере и передаются через Федиверс
+  Orbitalfore — это статический сайт. Все данные хранятся локально в вашем браузере и передаются через Федиверс
     инстансы, к которым вы подключаетесь.
   </p>
 
@@ -422,8 +422,8 @@ export default {
   notificationFilters: 'Фильтры уведомлений',
   pushNotifications: 'Всплывающее уведомление',
   // Add instance page
-  storageError: `Похоже, Enafore не может хранить данные локально. Ваш браузер находится в приватном режиме
-          или блокирует файлов cookie? Enafore хранит все данные локально, и для этого требуется LocalStorage и
+  storageError: `Похоже, Orbitalfore не может хранить данные локально. Ваш браузер находится в приватном режиме
+          или блокирует файлов cookie? Orbitalfore хранит все данные локально, и для этого требуется LocalStorage и
           IndexedDB для корректной работы.`,
   javaScriptError: 'Вы должны включить JavaScript, чтобы войти в систему.',
   enterInstanceName: 'Введите имя инстанса',
@@ -444,7 +444,7 @@ export default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Войти в инстанс',
-  logInToAnInstancePost: 'чтобы начать использовать Enafore.',
+  logInToAnInstancePost: 'чтобы начать использовать Orbitalfore.',
   // Another custom tooltip
   showRingPre: 'Всегда показывать',
   showRingText: 'кольцо фокусировки',
@@ -539,7 +539,7 @@ export default {
   themeOaken: 'Oaken',
   themeMajesty: 'Majesty',
   themeGecko: 'Gecko',
-  themeGrayscale: 'Grayscale',
+  themeGreyscale: 'Greyscale',
   themeOzark: 'Ozark',
   themeCobalt: 'Cobalt',
   themeSorcery: 'Sorcery',
@@ -548,7 +548,8 @@ export default {
   themeHacker: 'Hacker',
   themeMastodon: 'Mastodon',
   themePitchBlack: 'Pitch Black',
-  themeDarkGrayscale: 'Dark Grayscale',
+  themeDarkGreyscale: 'Dark Greyscale',
+  themeCatppuccinMacchiato: 'Catppuccin Macchiato',
   // Polls
   voteOnPoll: 'Голосовать в опросе',
   pollChoices: 'Варианты опроса',
