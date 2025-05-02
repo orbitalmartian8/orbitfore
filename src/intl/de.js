@@ -1,10 +1,10 @@
 export default {
   // Home page, basic <title> and <description>
-  appName: 'Enafore',
+  appName: 'Orbitalfore',
   appDescription: 'Ein alternativer Web Client für Mastodon, der auf Geschwindigkeit und einfache Bedienung ausgelegt ist.',
   homeDescription: `
     <p>
-      Enafore ist ein Web Client für
+      Orbitalfore ist ein Web Client für
       <a rel="noopener" target="_blank" href="https://joinmastodon.org">Mastodon</a>,
       der für Geschwindigkeit und einfache Bedienung konzipiert wurde.
     </p>
@@ -14,14 +14,14 @@ export default {
   logIn: 'Anmelden',
   footer: `
     <p>
-      Enafore ist
-      <a rel="noopener" target="_blank" href="https://github.com/enafore/enafore">quelloffene Software</a>,
+      Orbitalfore ist
+      <a rel="noopener" target="_blank" href="https://github.com/orbitalmartian8/orbitfore">quelloffene Software</a>,
       erstellt von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>
       und verteilt unter der
       <a rel="noopener" target="_blank"
-         href="https://github.com/enafore/enafore/blob/main/LICENSE">AGPL Lizenz</a>.
+         href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">AGPL Lizenz</a>.
       Hier ist die <a href="/settings/about#privacy-policy" rel="prefetch">Datenschutzerklärung</a>.
-      Es ist eine Fortsetzung des Enafore-Projekts von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
+      Es ist eine Fortsetzung des Orbitalfore-Projekts von <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>.
     </p>
   `,
   // Generic UI
@@ -172,7 +172,7 @@ export default {
     ·
     {showInstanceName, select,
       true {{instanceName}}
-      other {Enafore}
+      other {Orbitalfore}
     }
   `,
   pinLabel: `{label} {pinnable, select,
@@ -314,29 +314,29 @@ export default {
   verified: 'Verified',
   // About page
   about: 'Über',
-  aboutApp: 'Über Enafore',
+  aboutApp: 'Über Orbitalfore',
   aboutAppDescription: `
   <p>
-    Enafore ist
+    Orbitalfore ist
     <a rel="noopener" target="_blank"
-       href="https://github.com/enafore/enafore">freie und quelloffene Software</a>
+       href="https://github.com/orbitalmartian8/orbitfore">freie und quelloffene Software</a>
     erstellt von
     <a rel="noopener" target="_blank" href="https://nolanlawson.com">Nolan Lawson</a>
     und verteilt unter der
     <a rel="noopener" target="_blank"
-       href="https://github.com/enafore/enafore/blob/main/LICENSE">GNU Affero General Public License</a>.
+       href="https://raw.githubusercontent.com/orbitalmartian8/orbitfore/refs/heads/main/LICENSE">GNU Affero General Public License</a>.
   </p>
 
   <h2 id="privacy-policy">Datenschutzerklärung</h2>
 
   <p>
-    Enafore speichert keine persönlichen Informationen auf seinen Servern,
+    Orbitalfore speichert keine persönlichen Informationen auf seinen Servern,
     einschließlich, aber nicht beschränkt auf, Namen, E-Mail-Adressen,
     IP-Adressen, Beiträgen, und Fotos.
   </p>
 
   <p>
-    Enafore ist eine statische Seite. Alle Daten werden lokal in Ihrem Browser gespeichert und mit den Instanzen des Fediversums geteilt, zu denen Sie sich verbinden.
+    Orbitalfore ist eine statische Seite. Alle Daten werden lokal in Ihrem Browser gespeichert und mit den Instanzen des Fediversums geteilt, zu denen Sie sich verbinden.
   </p>
 
   <h2>Mitwirkende</h2>
@@ -404,7 +404,7 @@ export default {
   notificationFilters: 'Filter für Benachrichtigungen',
   pushNotifications: 'Push-Benachrichtigungen',
   // Add instance page
-  storageError: 'Es sieht so aus als ob Enafore lokal keine Daten speichern kann. Ist Dein Browser im privaten Modus oder blockiert Cookies? Enafore speichert alle Daten lokal und braucht zum ordnungsgemäßen Betrieb LocalStorage und IndexedDB.',
+  storageError: 'Es sieht so aus als ob Orbitalfore lokal keine Daten speichern kann. Ist Dein Browser im privaten Modus oder blockiert Cookies? Orbitalfore speichert alle Daten lokal und braucht zum ordnungsgemäßen Betrieb LocalStorage und IndexedDB.',
   javaScriptError: 'Du musst zum Einloggen javaScript einschalten.',
   enterInstanceName: 'Namen der Instanz eingeben',
   instanceColon: 'Instanz:',
@@ -424,7 +424,7 @@ export default {
   // Link text
   logInToAnInstancePre: '',
   logInToAnInstanceText: 'Melde Dich bei einer Instanz an',
-  logInToAnInstancePost: 'um Enafore zu verwenden.',
+  logInToAnInstancePost: 'um Orbitalfore zu verwenden.',
   // Another custom tooltip
   showRingPre: 'Immer einen',
   showRingText: 'Fokusring',
@@ -511,7 +511,7 @@ export default {
   themeOaken: 'Oaken',
   themeMajesty: 'Majesty',
   themeGecko: 'Gecko',
-  themeGrayscale: 'Grayscale',
+  themeGreyscale: 'Grayscale',
   themeOzark: 'Ozark',
   themeCobalt: 'Cobalt',
   themeSorcery: 'Sorcery',
@@ -520,7 +520,8 @@ export default {
   themeHacker: 'Hacker',
   themeMastodon: 'Mastodon',
   themePitchBlack: 'Pitch Black',
-  themeDarkGrayscale: 'Dark Grayscale',
+  themeDarkGreyscale: 'Dark Grayscale',
+  themeCatppuccinMacchiato: 'Catppuccin Macchiato',
   // Polls
   voteOnPoll: 'In dieser Umfrage abstimmen',
   pollChoices: 'Auswahlmöglichkeiten',

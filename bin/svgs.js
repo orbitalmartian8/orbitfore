@@ -77,5 +77,6 @@ export default [
   { id: 'fa-lock-home', src: 'src/static/lock-home.svg' },
   { id: 'fa-unlock-home', src: 'src/static/unlock-home.svg' },
   { id: 'fa-retweet-lock', src: 'src/static/retweet-lock.svg' },
-  { id: 'misskey-logo', src: 'src/static/misskey.svg' }
+  { id: 'misskey-logo', src: 'src/static/misskey.svg' },
+  { id: 'tooth', src: 'src/static/tooth.svg' }
 ]
