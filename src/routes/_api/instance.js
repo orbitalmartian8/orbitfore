@@ -2,10 +2,20 @@ import { get, DEFAULT_TIMEOUT } from '../_utils/ajax.js'
 import { auth, basename } from './utils.js'
 
 export async function getInstanceInfo (instanceName, accessToken) {
-  const url = `${basename(instanceName)}/api/v1/instance`
   // accessToken is required in limited federation mode, but elsewhere we don't need it (e.g. during login)
   const headers = accessToken ? auth(accessToken) : null
-  const instance = await get(url, headers, { timeout: DEFAULT_TIMEOUT })
+  let instance
+  const controller = new AbortController()
+  const v2Instance = get(`${basename(instanceName)}/api/v2/instance`, headers, { timeout: DEFAULT_TIMEOUT })
+  const v1Instance = get(`${basename(instanceName)}/api/v1/instance`, headers, { timeout: DEFAULT_TIMEOUT, signal: controller.signal })
+  v2Instance.catch(() => {})
+  v1Instance.catch(() => {})
+  try {
+    instance = await v2Instance
+    controller.abort()
+  } catch (e) {
+    instance = await v1Instance
+  }
   instance.nodeInfo = null
   try {
     const nodeInfo = await get(`${basename(instanceName)}/.well-known/nodeinfo`, headers, { timeout: DEFAULT_TIMEOUT })

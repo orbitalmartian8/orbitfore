@@ -284,10 +284,10 @@
     store: () => store,
     methods: {
       onClickOrKeydown (e) {
-        const { type, keyCode, target } = e
+        const { type, key, target } = e
 
         const isClick = type === 'click'
-        const isEnter = type === 'keydown' && keyCode === 13
+        const isEnter = type === 'keydown' && key === 'Enter'
         if (!isClick && !isEnter) {
           return false
         }

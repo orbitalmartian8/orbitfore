@@ -7,8 +7,8 @@ if (ENAFORE_IS_BROWSER) {
 }
 
 function onEvent (e) {
-  const { type, keyCode, target } = e
-  if (!(type === 'click' || (type === 'keydown' && keyCode === 13))) {
+  const { type, key: eventKey, target } = e
+  if (!(type === 'click' || (type === 'keydown' && eventKey === 'Enter'))) {
     // we're not interested in any non-click or non-Enter events
     return
   }

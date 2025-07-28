@@ -13,9 +13,11 @@
      aria-label={followingLabel}
      rel="prefetch"
   >
+    {#if !$disableFollowingCounts}
     <span class="account-profile-details-item-datum">
       {numFollowingDisplay}
     </span>
+    {/if}
     <span class="account-profile-details-item-title">
       {'intl.follows'}
     </span>
@@ -25,9 +27,11 @@
      aria-label={followersLabel}
      rel="prefetch"
   >
+    {#if !$disableFollowerCounts}
     <span class="account-profile-details-item-datum">
       {numFollowersDisplay}
     </span>
+    {/if}
     <span class="account-profile-details-item-title">
       {'intl.followers'}
     </span>
@@ -102,10 +106,7 @@
       numFollowers: ({ account }) => account.followers_count || 0,
       numStatusesDisplay: ({ numStatuses }) => numberFormat().format(numStatuses),
       numFollowingDisplay: ({ numFollowing }) => numberFormat().format(numFollowing),
-      numFollowersDisplay: ({ numFollowers, $disableFollowerCounts }) => {
-        if ($disableFollowerCounts && numFollowers >= 10) {
-          return '10+'
-        }
+      numFollowersDisplay: ({ numFollowers }) => {
         return numberFormat().format(numFollowers)
       },
       followersLabel: ({ numFollowers }) => (
