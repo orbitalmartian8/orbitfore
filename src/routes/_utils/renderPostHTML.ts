@@ -352,7 +352,9 @@ export function renderPostHTMLToDOM({
         (isFriendica =
           previousSibling &&
           defaultTreeAdapter.isTextNode(previousSibling) &&
-          previousSibling.value.endsWith('@')))
+          previousSibling.value.endsWith('@')) ||
+        // nodebb...
+        textContent(anchor)[0]?.[0] === '@')
     ) {
       const mention =
         mentionsByURL.get(href.value) ||
