@@ -617,6 +617,7 @@ export default {
   themeDarkGreyscale: 'Dark Greyscale',
   themeCohostLight: 'Cohost Light',
   themeCatppuccinMacchiato: 'Catppuccin Macchiato',
+  themeCatppuccinLatte: 'Catppuccin Latte',
   // Polls
   voteOnPoll: 'Vote on poll',
   pollChoices: 'Poll choices',
