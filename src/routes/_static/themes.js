@@ -124,6 +124,12 @@ const themes = [
     label: 'intl.themeCatppuccinMacchiato', // translated-visible name
     dark: true, // whether it's a dark theme or not
     color: '#8aadf4' // main theme color
+  },
+  {
+    name: 'catppuccin-latte', // visible name
+    label: 'intl.themeCatppuccinLatte', // translated-visible name
+    dark: false, // whether it's a dark theme or not
+    color: '#1e66f5' // main theme color
   }
 ]
 
