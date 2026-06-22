@@ -619,6 +619,7 @@ export default {
   themeCatppuccinMacchiato: 'Catppuccin Macchiato',
   themeCatppuccinLatte: 'Catppuccin Latte',
   themeGruvboxLight: 'Gruvbox Light',
+  themeGruvboxDark: 'Gruvbox Dark',
   // Polls
   voteOnPoll: 'Vote on poll',
   pollChoices: 'Poll choices',
