@@ -126,17 +126,16 @@ const themes = [
     color: '#8aadf4' // main theme color
   },
   {
-    name: 'catppuccin-latte', // visible name
-    label: 'intl.themeCatppuccinLatte', // translated-visible name
-    dark: false, // whether it's a dark theme or not
-    color: '#1e66f5' // main theme color
+    name: 'catppuccin-latte',
+    label: 'intl.themeCatppuccinLatte',
+    dark: false,
+    color: '#1e66f5'
   },
-    },
   {
-    name: 'gruvbox-light', // visible name
-    label: 'intl.themeGruvboxLight', // translated-visible name
-    dark: false, // whether it's a dark theme or not
-    color: '#458588' // main theme color
+    name: 'gruvbox-light',
+    label: 'intl.themeGruvboxLight',
+    dark: false,
+    color: '#458588'
   }
 ]
 
