@@ -1,0 +1,19 @@
+$main-theme-color: #458588;
+$main-bg-color: #fbf1c7;
+$body-bg-color: darken($main-bg-color, 5%);
+$anchor-color: $main-theme-color;
+$main-text-color: #3c3836;
+$border-color: lighten($body-bg-color, 10%);
+$secondary-text-color: #504945;
+$toast-border: #458588;
+$toast-bg: #a89984;
+$focus-outline: lighten($main-theme-color, 50%);
+$compose-background: lighten($main-theme-color, 52%);
+
+@import "_base.scss";
+@import "_light_scrollbars.scss";
+
+:root {
+  accent-color: #{darken($main-theme-color, 5%)};
+  --nav-indicator-bg-active: #{mix($secondary-text-color, $main-theme-color, 40%)}; // special override on the nav indicator color
+}
