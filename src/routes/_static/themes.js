@@ -130,6 +130,13 @@ const themes = [
     label: 'intl.themeCatppuccinLatte', // translated-visible name
     dark: false, // whether it's a dark theme or not
     color: '#1e66f5' // main theme color
+  },
+    },
+  {
+    name: 'gruvbox-light', // visible name
+    label: 'intl.themeGruvboxLight', // translated-visible name
+    dark: false, // whether it's a dark theme or not
+    color: '#458588' // main theme color
   }
 ]
 
