@@ -136,7 +136,13 @@ const themes = [
     label: 'intl.themeGruvboxLight',
     dark: false,
     color: '#458588'
-  }
+  },
+  {
+    name: 'gruvbox-dark',
+    label: 'intl.themeGruvboxDark',
+    dark: true,
+    color: '#458588'
+  },
 ]
 
 export { themes }
