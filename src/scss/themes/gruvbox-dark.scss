@@ -3,7 +3,7 @@ $main-bg-color: #282828;
 $body-bg-color: darken($main-bg-color, 5%);
 $anchor-color: $main-theme-color;
 $main-text-color: #ebdbb2;
-$border-color: lighten($body-bg-color, 10%);
+$border-color: #3c3836;
 $secondary-text-color: #d5c4a1;
 $toast-border: #458588;
 $toast-bg: #7c6f64;
@@ -16,6 +16,6 @@ $compose-background: lighten($main-theme-color, 52%);
 @import "_dark_scrollbars.scss";
 
 :root {
-    accent-color: #{darken($main-theme-color, 5%)};
+    accent-color: #458588;
     --nav-indicator-bg-active: #{mix($secondary-text-color, $main-theme-color, 40%)}; // special override on the nav indicator color
 }
